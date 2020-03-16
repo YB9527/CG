@@ -59,7 +59,7 @@
                 <dxr:RibbonDefaultPageCategory Caption="Default Category" >
                     <dxr:RibbonPage Caption="集体所有权">
 
-                        <dxr:RibbonPageGroup Caption="文件配置" IsCaptionButtonEnabled="True">
+                        <dxr:RibbonPageGroup Caption="文件配置222" IsCaptionButtonEnabled="True">
                             <dxb:BarButtonItem  ItemClick="OpenMxd_Click" Content="配置MXD路径" Name="OpenMxdBtu" LargeGlyph="{dx:DXImage Image=BOCountry_32x32.png}" Glyph="{dx:DXImage Image=AddFile_32x32.png}" RibbonStyle="Large" >
                             </dxb:BarButtonItem>
                             <dxb:BarButtonItem Content="其他文件配置" ItemClick="FileConfig_Click" Glyph="{dx:DXImage Image=Reading_32x32.png}" LargeGlyph="{dx:DXImage Image=SwitchRowColumn_32x32.png}"/>
