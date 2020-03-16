@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="ZaiJiDi.ZaiJiDiModel.JSYD,ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <property key= "ZDMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+  
+  <property key= "JZZDZMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+  
+  <property key= "SYQMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+
+  <property key= "CZMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+  <property key= "YTDSYZSH"    default ="/" />
+  
+  <property  key= "Chbm"  value = "get_ZDNUM" >
+    <ChildMethoed value = "Replace" ClassType ="System.String" parameters = "510185," parameterClassType = "System.String,System.String" />
+  </property>
+
+  <property  key= "JZXInfoCount"  value = "get_JZXInfos" >
+    <ChildMethoed ClassType ="System.Collections.ObjectModel.ObservableCollection`1[[ZaiJiDi.ZaiJiDiModel.JZXInfo, ZaiJiDi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value = "get_Count" />
+  </property>
+
+  <property key= "DCRQ"    >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日," parameterClassType = "System.String" />
+  </property>
+
+  <property key= "SHRQ"    >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日," parameterClassType = "System.String" />
+  </property>
+  <property key= "ZTRQ"    >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日," parameterClassType = "System.String" />
+  </property>
+  <property key= "ZTSHRQ"    >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日," parameterClassType = "System.String" />
+  </property>
+  
+</propertys>

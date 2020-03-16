@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC09FE57-31AC-48C1-807C-536BE90350E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZaiJiDi</RootNamespace>
+    <AssemblyName>ZaiJiDi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.CodeParser.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Grid.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PublicPackage\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\npoi\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Spire.Doc, Version=6.0.0.4040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\sprie\doc\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.6.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Package\sprie\doc\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\DangAnDaiController.cs" />
+    <Compile Include="Controller\IDangAnDaiController.cs" />
+    <Compile Include="Controller\ZJDController.cs" />
+    <Compile Include="Dao\DangAnDaiDao.cs" />
+    <Compile Include="Dao\IDangAnDaiDao.cs" />
+    <Compile Include="Dao\IZJDDao.cs" />
+    <Compile Include="Dao\ZJDDao.cs" />
+    <Compile Include="Pages\DataShow\JSYDDataShowWindow.xaml.cs">
+      <DependentUpon>JSYDDataShowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataShow\ZJDPagerPage.xaml.cs">
+      <DependentUpon>ZJDPagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExportData\JSYDPagerPageViewModel.cs" />
+    <Compile Include="ZaiJiDiModel\DangAnDaiDirModel.cs" />
+    <Compile Include="ZaiJiDiModel\DangAnDaiMergeViewModel.cs" />
+    <Compile Include="ZaiJiDiModel\DangDanDai.cs" />
+    <Compile Include="ZaiJiDiModel\Floor.cs" />
+    <Compile Include="ZaiJiDiModel\FloorCustom.cs" />
+    <Compile Include="ZaiJiDiModel\JSYD.cs" />
+    <Compile Include="ZaiJiDiModel\JSYDCustom.cs" />
+    <Compile Include="ZaiJiDiModel\JTCY.cs" />
+    <Compile Include="ZaiJiDiModel\JTCYCustom.cs" />
+    <Compile Include="ZaiJiDiModel\JZXInfo.cs" />
+    <Compile Include="ZaiJiDiModel\JZXInfoCustom.cs" />
+    <Compile Include="ZaiJiDiModel\NF.cs" />
+    <Compile Include="ZaiJiDiModel\NFCustom.cs" />
+    <Compile Include="ZaiJiDiModel\QZB.cs" />
+    <Compile Include="ZaiJiDiModel\QZBCustom.cs" />
+    <Compile Include="ZaiJiDiModel\YiShiShengMingBuYiZhiZhengMing.cs" />
+    <Compile Include="ZaiJiDiModel\Zdinfo.cs" />
+    <Compile Include="Pages\DataSource\ZJDDataSourcePage.xaml.cs">
+      <DependentUpon>ZJDDataSourcePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\DangAnDaiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IDangAnDaiService.cs" />
+    <Compile Include="Service\IZJDService.cs" />
+    <Compile Include="Service\ZJDService.cs" />
+    <Compile Include="Pages\DataSource\ZJDDataSourceViewModel.cs" />
+    <Compile Include="Pages\ExportData\ZJDExportDataPage.xaml.cs">
+      <DependentUpon>ZJDExportDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExportData\ZJDExportDataViewModel.cs" />
+    <Compile Include="ZaiJiDiModel\ZdinfoCustom.cs" />
+    <Compile Include="ZaiJiDiModel\ZJDXZDM.cs" />
+    <Compile Include="ZaiJiDiModel\ZJDXZDMCustom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PublicPackage\ExcelManager\ExcelManager.csproj">
+      <Project>{08c0793b-2ade-492d-9d22-da8f8e85d3ef}</Project>
+      <Name>ExcelManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\FileManager\FileManager.csproj">
+      <Project>{1c1d0938-2aab-4ec4-9325-91d00e105b66}</Project>
+      <Name>FileManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\HeibernateManager\HeibernateManager.csproj">
+      <Project>{CEC2F665-B674-4E26-80AE-97525582A919}</Project>
+      <Name>HeibernateManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\MyUtils\MyUtils.csproj">
+      <Project>{f9629731-616d-41a5-a06b-ceb08a1c2ac8}</Project>
+      <Name>MyUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\ProgressTask\ProgressTask.csproj">
+      <Project>{3BA95155-F1F0-44C1-BCF2-8AB77CDFE515}</Project>
+      <Name>ProgressTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\ReflectManager\ReflectManager.csproj">
+      <Project>{CE3218F3-A0DF-48AE-92A5-94FDD043DE1F}</Project>
+      <Name>ReflectManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\WordManager\WordManager.csproj">
+      <Project>{4f1cd486-6819-47d0-997c-edf50470b31e}</Project>
+      <Name>WordManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PublicPackage\WPFTemplate\WPFTemplate.csproj">
+      <Project>{815a2642-729b-4263-9ae2-184dd671874e}</Project>
+      <Name>WPFTemplate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JTSYQManager\JTSYQManager.csproj">
+      <Project>{1F65B9E8-C53C-4D39-BA0F-8B1F49E615C5}</Project>
+      <Name>JTSYQManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChengDuGaoXingZaiJiDiModel\遗失声明模板.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="ZaiJiDiModel\Floor.WriteExcel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\NF.WriteExcel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JTCY.WriteExcel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JSYD.WriteExcel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\ZJDXZDM.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\GYR.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\Floor.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\NF.JSON.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\NF.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JTCY.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JTCY.JSON.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JSYD.MDB.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaiJiDiModel\JSYD.Excel.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChengDuGaoXingZaiJiDiModel\不一致证明模板.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChengDuGaoXingZaiJiDiModel\建设用地表共用宗模板.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChengDuGaoXingZaiJiDiModel\农房表模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChengDuGaoXingZaiJiDiModel\家庭成员表模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pages\DataShow\JSYDDataShowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DataShow\ZJDPagerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DataSource\ZJDDataSourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ExportData\ZJDExportDataPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

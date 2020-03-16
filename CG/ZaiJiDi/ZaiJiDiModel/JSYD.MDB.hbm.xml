@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<propertys ClassType ="ZaiJiDi.Model.JSYD, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  <property column="XH" type="Int32" name="序号">
+  </property>
+
+  <property column="ZDNUM" name="宗地号">
+
+  </property>
+  <property column="ZH" name ="组别">
+
+  </property>
+  <property column="QLRMC"  name ="户主">
+
+  </property>
+  <property column="ZJHM"  name ="户主身份证号码">
+
+  </property>
+  <property column="ZJLX"  name ="ZJLX" default="身份证">
+
+  </property>
+
+  <property column="TDZL"  name ="坐落">
+
+  </property>
+
+  <property column="YTDSYZSH"  name ="原土地使用证号">
+
+  </property>
+
+  <property column="TDYT" name="TDYT"  default ="农村宅基地及其他">
+
+  </property>
+
+
+  <property column="TDDJ"  name ="土地等级">
+
+  </property>
+  <property column="QSRQ"  name ="起始日期">
+
+  </property>
+  <property column="ZZRQ"  name ="终止日期">
+
+  </property>
+  <property column="SYNX"  name ="使用年限">
+
+  </property>
+  <property column="TDJG"  name ="土地价格">
+
+  </property>
+  <property column="TDYT2"  name ="土地用途2">
+
+  </property>
+  <property column="TDDJ2"  name ="土地等级2">
+
+  </property>
+  <property column="QSRQ2"  name ="起始日期2">
+
+  </property>
+  <property column="ZZRQ2"  name ="终止日期2">
+
+  </property>
+  <property column="SYNX2"  name ="使用年限2">
+
+  </property>
+  <property column="TDJG2"  name ="土地价格2">
+
+  </property>
+  <property column="TDYT3"  name ="土地用途3">
+
+  </property>
+  <property column="TDDJ3"  name ="土地等级3">
+
+  </property>
+  <property column="QSRQ3"  name ="起始日期3">
+
+  </property>
+  <property column="ZZRQ3"  name ="终止日期3">
+
+  </property>
+  <property column="SYNX3"  name ="使用年限3">
+
+  </property>
+  <property column="TDJJG3"  name ="土地价格3">
+
+  </property>
+  <property column="QLLX"  name="QLLX"  default="宅基地使用权">
+
+  </property>
+  <property column="QLXZ"  name="QLXZ" default="批准拨用">
+
+  </property>
+  <property column="TFH"  name ="图幅号">
+
+  </property>
+  <property column="ZJR"  name ="指界人">
+
+  </property>
+  <property column="ZDMJ"  name ="宗地总面积">
+
+  </property>
+  <property column="SYQMJ"  name ="批准面积">
+
+  </property>
+  <property column="DYMJ"  name ="独用面积">
+
+  </property>
+  <property column="FTMJ"  name ="分摊面积">
+
+  </property>
+  <property column="CZMJ" name ="其他集体建设用地面积">
+
+  </property>
+  <property column="WFMJ"  name ="违法面积">
+
+  </property>
+  <property column="PZMJ"  name ="PZMJ">
+
+  </property>
+  <property column="JZZDZMJ"  name ="建筑物占地面积">
+
+  </property>
+  <property column="SZDZ"  name ="东至">
+
+  </property>
+  <property column="SSNZ"  name ="南至">
+
+  </property>
+  <property column="SZXZ"  name ="西至">
+
+  </property>
+  <property column="SZBZ"  name ="北至">
+
+  </property>
+  <property column="PZYT"  name="PZYT" default="住宅">
+
+  </property>
+  <property column="SJYT" name="SJYT"  default="住宅">
+
+  </property>
+  <property column="PZRQ"  name ="批准日期">
+
+  </property>
+  <property column="SYQX"  name ="使用期限">
+
+  </property>
+  <property column="ZZRQ4"  name ="终止日期4">
+
+  </property>
+  <property column="QDJG"  name ="取得价格">
+
+  </property>
+  <property column="JZRJl"  name ="建筑容积率">
+
+  </property>
+  <property column="JZMD"  name ="建筑密度">
+
+  </property>
+
+  <property column="JZXG"  name ="建筑限高">
+
+  </property>
+
+  <property column="JZWZDM"  name="JZWZDM">
+
+  </property>
+
+  <property column="JZWLX"  name ="建筑物类型">
+
+  </property>
+
+  <property column="SBJZWQS"  name ="申报建筑物权属">
+
+  </property>
+
+  <property column="ZDSM"  name ="宗地说明">
+
+  </property>
+
+  <property column="ZYJZDWSM"  name ="重要界址点点位说明">
+
+  </property>
+
+  <property column="ZYQSJXZXSM"  name ="主要权属界线走向说明">
+
+  </property>
+  <property column="ZDXBXZGYHQTNMJTTDFGRSM"  name ="宗地被线状国有或其它农民集体土地分割的说明">
+
+  </property>
+  <property column="QTSJ"  name ="其他说明">
+
+  </property>
+  <property column="DCY"  name ="测绘员名字">
+
+  </property>
+  <property column="DCRQ"  name ="调查时间">
+
+  </property>
+  <property column="DCJS"  name="DCJS" default="实地调查">
+
+  </property>
+  <property column="KZY"  name ="勘丈员">
+
+  </property>
+  <property column="KZRQ"  name ="勘丈日期">
+
+  </property>
+  <property column="KZJS"  name ="勘丈记事">
+
+  </property>
+  <property column="SHY"  name ="审核员">
+
+  </property>
+  <property column="SHRQ"  name ="审核时间">
+
+  </property>
+  <property column="SHYJ"  name="SHYJ" default="调查属实">
+
+  </property>
+  <property column="BZ"  name ="备注">
+
+  </property>
+
+
+</propertys>
+

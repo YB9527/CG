@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="ZaiJiDi.ZaiJiDiModel.NF, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="4" end="1" rows = "1" cellTotal = "55">
+      <cell index="0" ref = "ZRZH" />
+      <cell index="1" ref = "HH" />
+      <cell index="2" ref = "ZDNUM" />
+      <cell index="3" ref = "SJH" />
+      <cell index="4" ref = "CJH" />
+      <cell index="5" ref = "HJH" />
+      <cell index="6" ref = "SYQZH" />
+      <cell index="7" ref = "YFCDAH" />
+      <cell index="8" ref = "QLRMC" />
+      <cell index="9" ref = "ZJHM" />
+      <cell index="10" ref = "YQLR" />
+      <cell index="11" ref = "ZCS" />
+      <cell index="12" ref = "SZC" />
+      <cell index="13" ref = "CZTJG" />
+      <cell index="14" ref = "CJZMJ" />
+      <cell index="17" ref = "CFWYT" />
+      <cell index="18" ref = "HX" />
+      <cell index="19" ref = "HXJG" />
+      <cell index="20" ref = "TDYT" />
+      <cell index="21" ref = "TDDJ" />
+      <cell index="22" ref = "FWLX" />
+      <cell index="23" ref = "FWXZ" />
+      <cell index="24" ref = "JG" />
+      <cell index="25" ref = "JZMJ" />
+      <cell index="26" ref = "CS" />
+      <cell index="27" ref = "FZMJ" />
+      <cell index="28" ref = "SCMJ" />
+      <cell index="29" ref = "FWYT" />
+      <cell index="30" ref = "GHYT" />
+      <cell index="31" ref = "DJZL" />
+      <cell index="32" ref = "CB" />
+      <cell index="33" ref = "SQDJSY" />
+      <cell index="34" ref = "FWLY" />
+      <cell index="35" ref = "YJTTDSYZ" />
+      <cell index="36" ref = "YFWSYQZ" />
+      <cell index="37" ref = "YDSPCL" />
+      <cell index="41" ref = "JGRQ" />
+      <cell index="42" ref = "ZL" />
+      <cell index="43" ref = "CQLY" />
+      <cell index="44" ref = "QTGSD" />
+      <cell index="45" ref = "QTGSN" />
+      <cell index="46" ref = "QTGSX" />
+      <cell index="47" ref = "QTGSB" />
+      <cell index="48" ref = "DCY" />
+      <cell index="49" ref = "DCRQ" />
+      <cell index="50" ref = "DCJS" />
+      <cell index="51" ref = "SHY" />
+      <cell index="52" ref = "SHRQ" />
+      <cell index="53" ref = "SHYJ" />
+      <cell index="54" ref = "BZ" />
+
+
+    </row>
+  </table>
+</propertys>

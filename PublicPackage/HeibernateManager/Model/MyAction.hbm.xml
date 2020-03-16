@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+
+                   assembly="HeibernateManager"
+
+                   namespace="HeibernateManager.Model">
+
+  <class name="MyAction" table="MyAction" lazy="true" >
+
+
+    <id name="OBJECTID" column="OBJECTID" type="Int64" >    
+      <generator class="native"></generator>
+    </id>   
+    <property name="TaskName" ></property>
+    <property name="StartTime" ></property>
+    <property name="EndTime" ></property>
+    <property name="SuccessShowMessage" ></property>
+    <property name="IsSuccess" ></property>
+    
+
+  </class>
+
+
+
+</hibernate-mapping>
+

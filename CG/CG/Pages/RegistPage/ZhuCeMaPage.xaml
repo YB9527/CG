@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="CG.Pages.RegistPage.ZhuCeMaPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CG.Pages.RegistPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Uid="注册码">
+    <Grid>
+        <Label Margin="80,30,405,379.6" Content="请注册，联系人：闫波，QQ : 525730167" FontSize="20"/>
+        <TextBox x:Name="textBox" TextWrapping="Wrap" HorizontalAlignment="Left" Height="290"    VerticalAlignment="Top" Width="625" Margin="80,80,0,0"/>
+    </Grid>
+</UserControl>

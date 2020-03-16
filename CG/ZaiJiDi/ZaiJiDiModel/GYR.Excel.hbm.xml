@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="ZaiJiDi.ZaiJiDiModel.JSYD, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicnameToken = null">
+
+  <table index = "0" tableIndex = "1" >
+    <row method="set_" rowStartIndex ="2"   rows = "1" >
+      <cell index="1" ref = "ZDNUM" />
+      <cell index="2" ref = "QLRMC" />
+      <cell index="4" ref = "ZJHM" />
+      
+    </row>
+
+  </table>
+
+
+</propertys>

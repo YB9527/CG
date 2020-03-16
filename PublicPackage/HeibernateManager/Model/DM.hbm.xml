@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+
+                   assembly="HeibernateManager"
+
+                   namespace="HeibernateManager.Model">
+
+  <class name="DM" table="DM" lazy="true" >
+
+
+    <id name="OBJECTID" column="OBJECTID" type="Int64" >    
+      <generator class="native"></generator>
+    </id>
+   
+    <property name="DMDM" column="DMDM" type="String"></property>
+    <property name="BZMC" column="BZMC" type="String"></property>
+    <property name="BM" column="BM" type="String"></property>
+    <property name="JC" column="JC" type="String"></property>
+    <property name="CYM" column="CYM" type="String"></property>
+    <property name="DMLB" column="DMLB" type="String"></property>
+
+
+    <property name="DJ" column="DJ" type="String"></property>
+    <property name="ZDJ" column="ZDJ" type="String"></property>
+    <property name="BW" column="BW" type="String"></property>
+    <property name="ZBW" column="ZBW" type="String"></property>
+
+    <property name="DMPCZT" column="DMPCZT" type="String"></property>
+    <property name="YTMC" column="YTMC" type="String"></property>
+    <property name="THNB" column="THNB" type="String"></property>
+    <property name="BLC" column="BLC" type="String"></property>
+    <property name="SYSJ" column="SYSJ" type="String"></property>
+    <property name="DMDLL" column="DMDLL" type="String"></property>
+    <property name="DMDHY" column="DMDHY" type="String"></property>
+    <property name="DMDLSYG" column="DMDLSYG" type="String"></property>
+    <property name="MJ" column="MJ" type="String"></property>
+    <property name="ZBX" column="ZBX" type="String"></property>
+    <property name="CLFF" column="CLFF" type="String"></property>
+    <property name="DLSTGK" column="DLSTGK" type="String"></property>
+    <property name="DMTXX" column="DMTXX" type="String"></property>
+    <property name="ZLLY" column="ZLLY" type="String"></property>
+    <property name="BZ" column="BZ" type="String"></property>
+    <property name="DJSJ" column="DJSJ" type="String"></property>
+    <property name="DJR" column="DJR" type="String"></property>
+    <property name="DJDW" column="DJDW" type="String"></property>
+    <property name="SLNF" column="SLNF" type="String"></property>
+    <property name="FZNF" column="FZNF" type="String"></property>
+    <property name="JSON" column="JSON" type="String" ></property>
+ 
+  </class>
+
+
+
+</hibernate-mapping>
+

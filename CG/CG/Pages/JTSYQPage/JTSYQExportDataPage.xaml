@@ -1,0 +1,119 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+             xmlns:ViewModels="clr-namespace:CG.Pages.JTSYQPage"
+             xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+             x:Class="CG.Pages.JTSYQPage.JTSYQExportDataPage"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="500" Uid="导出集体所有权成果" >
+    <UserControl.Resources>
+
+
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+        <Style x:Key="checkBoxStyle" TargetType="{x:Type CheckBox}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+
+        </Style>
+        <Style x:Key="labelStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+            <Setter Property="Margin" Value="5,2,5,2"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="textStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5,2,5,2"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+            <Setter Property="Margin" Value="5,2,5,2"/>
+        </Style>
+        <Style x:Key="comBoxStyle" TargetType="{x:Type ComboBox}">
+        </Style>
+
+    </UserControl.Resources>
+    <Grid >
+        <Border Style="{StaticResource borderStyle}">
+            <Grid Margin="10">
+                <Border Style="{StaticResource borderStyle}">
+                    <StackPanel Height="471" Margin="0.2,0,-0.4,4" VerticalAlignment="Bottom"  >
+                        <StackPanel.Resources>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Orientation" Value="Vertical" />
+                                <Setter Property="Margin" Value="0,0,0,4" />
+                            </Style>
+                        </StackPanel.Resources>
+                       
+                            <StackPanel Orientation="Horizontal" Margin="10">
+                            <dx:SimpleButton Content="导出位置" Click="SelectDir_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" ></dx:SimpleButton>
+                            <dxe:ButtonEdit DefaultButtonClick="OpenDir_Click"  MinWidth="370" Text="{Binding SaveDir, Mode=TwoWay}"/>
+                            </StackPanel>
+                     
+                        
+                            <StackPanel Orientation="Horizontal">
+                                <Border Style="{StaticResource borderStyle}">
+                                    <StackPanel Orientation="Vertical" Margin="20">
+                                    <CheckBox Content="组资料"   Name="ZuZiLiao" HorizontalAlignment="Center" Click="ZuZiLiao_Click" >
+                                       
+                                    </CheckBox>
+                                    <CheckBox Content="档案袋" IsChecked="{Binding Zu_DangAnDai, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="土地权属来源证明"  IsChecked="{Binding Zu_TuDiQuanShuZhengMing, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="法人代表身份证明"  IsChecked="{Binding Zu_FaRenDaiBiaoZhengMing, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="法人代表授权委托书"  IsChecked="{Binding Zu_FaRenDaiBiaoWeiTuoShu, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="指界人身份证明" IsChecked="{Binding Zu_ZhiJieRenZhengMing, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="审批表"   IsChecked="{Binding Zu_ShengPiBiao, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="界址点成果表" IsChecked="{Binding Zu_JieZhiDianChengGuoBiao, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="权籍调查表" IsChecked="{Binding Zu_QuanJiDiaoChaBiao, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="入库单宗地表"  IsChecked="{Binding Zu_RuKuDanZhongDiBiao, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="宗地图" IsChecked="{Binding Zu_ZhongDiTu, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                </StackPanel  >
+                                    </Border>
+                                <Border Style="{StaticResource borderStyle}">
+                                    <StackPanel Orientation="Vertical" Margin="20">
+                                    <CheckBox Content="村资料" Name="CunZiLiao"  Click="CunZiLiao_Click"  HorizontalAlignment="Center"   />
+                                    <CheckBox Content="档案袋" IsChecked="{Binding Cun_DangAnDai, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="公告反馈意见书"  IsChecked="{Binding Cun_GongGaoFanKuiYiJianShu, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="公示反馈意见书" IsChecked="{Binding Cun_GongShiFanKuiYiJianShu, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="确权结果公告" IsChecked="{Binding Cun_QueQuanJieGuoGongGao, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="确权结果公示"  IsChecked="{Binding Cun_QueQuanJieGuoGongShi, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="公告表" IsChecked="{Binding Cun_GongGaoBiao, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="公示表" IsChecked="{Binding Cun_GongShiBiao, Mode=TwoWay}"  Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="集体土地调查表"  IsChecked="{Binding Cun_JiTiTuDiDiaoChaBiao, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                    <CheckBox Content="公示图"  IsChecked="{Binding Cun_GongShiTu, Mode=TwoWay}" Style="{StaticResource checkBoxStyle}" />
+                                 
+                                </StackPanel>
+                                </Border>
+                            </StackPanel>
+                       
+
+                        <StackPanel Orientation="Horizontal" Height="30" Margin="30,50,0,0">
+                            <dx:SimpleButton Content="导出" Click="Submit_Click" Glyph="{dx:DXImage Image=Apply_16x16.png}"></dx:SimpleButton>
+                            <dx:SimpleButton  Margin="50,0,0,0" Click="Cancel_Click" Content="重置" Glyph="{dx:DXImage Image=Refresh_16x16.png}"></dx:SimpleButton>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

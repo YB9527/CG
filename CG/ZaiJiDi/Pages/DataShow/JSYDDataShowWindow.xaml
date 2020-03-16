@@ -1,0 +1,234 @@
+﻿<dx:DXWindow xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    x:Class="ZaiJiDi.Pages.DataShow.JSYDDataShowWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="数据编辑" Height="600" Width="1200"  WindowStartupLocation="CenterScreen"  WindowState="Maximized"
+    >
+    <Window.Resources>
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+        <Style x:Key="TextEdit" TargetType="{x:Type dxe:TextEdit}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel  Orientation="Vertical">
+                
+                <!--标题信息-->
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <dx:SimpleButton Content="保存编辑" Click="Save_Click" Glyph="{dx:DXImage Image=Apply_32x32.png}"/>
+                    <Label Content="宗地编码：" Margin="5,0,0,0"/>
+                    <dxe:TextEdit   Text="{Binding ZDNUM, Mode=TwoWay}"  IsEnabled="True" MinWidth="200" Style="{StaticResource TextEdit}"/>
+                    <Label Content="户主："/>
+                    <dxe:TextEdit   Text="{Binding QLRMC, Mode=TwoWay}" IsEnabled="True"  MinWidth="100" Style="{StaticResource TextEdit}"/>
+
+                    <Label Content="电话："/>
+                    <dxe:TextEdit   Name="LXDHTexEdit" DataContextChanged="LXDHTexEdit_DataContextChanged" IsEnabled="True"  MinWidth="100" Style="{StaticResource TextEdit}"/>
+
+                    <Label Content="减法计算器：" Margin="10,0,0,0"/>
+                    <dxe:TextEdit  Name="num1TextEdit" EditValueChanged="Num1TextEdit_EditValueChanged"  MinWidth="80" Style="{StaticResource TextEdit}"/>
+                    <Label Content="-"/>
+                    <dxe:TextEdit  Name="num2TextEdit" EditValueChanged="Num1TextEdit_EditValueChanged" MinWidth="80" Style="{StaticResource TextEdit}"/>
+                    <Label Content="="/>
+                    <dxe:TextEdit  Name="num3TextEdit"  MinWidth="80" Style="{StaticResource TextEdit}"/>
+                </StackPanel>
+                <!--家庭成员-->
+                <StackPanel Margin="2" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="家庭成员"/>
+                        <Label Content="家庭人口总共：" Margin="20,0,0,0"/>
+                        <Label  Name="JTCYCountTextEdit"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <dxg:GridControl Height="150" Name="JTCYTable" Width="900" HorizontalAlignment="Left">
+                                <dxg:GridColumn  Header="性名"  FieldName="XM" MinWidth="50"  />
+                                <dxg:GridColumn  Header="关系"  FieldName="YHZGX" MinWidth="50"  />
+                                <dxg:GridColumn  Header="身份证"  FieldName="GMSFHM"   MinWidth="200" />
+                                <dxg:GridControl.View >
+                                    <dxg:TableView   ShowGroupPanel="False" AllowEditing="True"  AutoWidth="True" />
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+                        </StackPanel>
+                        <StackPanel>
+                            <dx:SimpleButton Content="打开户文件夹" Click="OpenHuDir_Click" Margin="5" Glyph="{dx:DXImage Image=Open_16x16.png}"></dx:SimpleButton>
+                            <dx:SimpleButton Content="00_档案袋" Click="OpenDangAnDai_Click" Margin="5" Glyph="{dx:DXImage Image=Open_16x16.png}"></dx:SimpleButton>
+                            <dx:SimpleButton Content="1_确权登记申请审批表"  Click="OpenSPB_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="2_户代表委托书" Click="OpenWTS_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="3_户代表声明书" Click="OpenSMS_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            
+                        </StackPanel>
+                        <StackPanel>
+                            <dx:SimpleButton Content="6_草图" Click="OpenCT_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="6_宅基地权籍调查表"  Click="OpenQJDCB_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="7_宗地图"  Click="OpenZDT_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="7_平面图" Click="OpenPMT_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                            <dx:SimpleButton Content="8_房产测绘报告" Click="OpenCHBG_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" Margin="5"></dx:SimpleButton>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                   
+                    
+                    
+                </StackPanel>
+                <!--建设用地-->
+                <StackPanel Margin="2" Orientation="Horizontal">
+                    <StackPanel>
+                        <StackPanel>
+                            <Label Content="建设用地"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="集体土地证号："/>
+                            <dxe:TextEdit   Text="{Binding YTDSYZSH, Mode=TwoWay}" MinWidth="315" Style="{StaticResource TextEdit}"/>
+                            <Label Content="图幅号：" Margin="0,0,0,0"/>
+                            <dxe:TextEdit   Text="{Binding TFH, Mode=TwoWay}" MinWidth="350" Style="{StaticResource TextEdit}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="四至北：" />
+                            <dxe:TextEdit   Text="{Binding SZBZ, Mode=TwoWay}" MinWidth="150" Style="{StaticResource TextEdit}"/>
+                            <Label Content="四至东："/>
+                            <dxe:TextEdit   Text="{Binding SZDZ, Mode=TwoWay}" MinWidth="150" Style="{StaticResource TextEdit}"/>
+                            <Label Content="四至南：" />
+                            <dxe:TextEdit   Text="{Binding SSNZ, Mode=TwoWay}" MinWidth="150" Style="{StaticResource TextEdit}"/>
+                            <Label Content="四至西："/>
+                            <dxe:TextEdit   Text="{Binding SZXZ, Mode=TwoWay}" MinWidth="148" Style="{StaticResource TextEdit}"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="2">
+
+                            <Label Content="宗地面积："/>
+                            <dxe:TextEdit  Margin="0,0,0,0" Text="{Binding ZDMJ, Mode=TwoWay}" MinWidth="138" Style="{StaticResource TextEdit}"/>
+                            <Label Content="使用权面积："  Margin="0,0,0,0"/>
+                            <dxe:TextEdit   Text="{Binding SYQMJ, Mode=TwoWay}" MinWidth="126" Style="{StaticResource TextEdit}"/>
+                            <Label Content="超占面积：" Margin="0,0,0,0"/>
+                            <dxe:TextEdit   Text="{Binding CZMJ, Mode=TwoWay}" MinWidth="140" IsEnabled="False" Style="{StaticResource TextEdit}"/>
+                            <Label Content="占地面积：" Margin="0,0,0,0"/>
+                            <dxe:TextEdit   Text="{Binding JZZDZMJ, Mode=TwoWay}" MinWidth="135" Style="{StaticResource TextEdit}" />
+
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="BZTipBox" Text="{Binding BZ, Mode=TwoWay}"  Width="100" Height="100" />
+                        
+                        <TextBox Name="TipBox1" TextWrapping="Wrap" Width="100" Height="100" />
+                        <TextBox Name="TipBox2" TextWrapping="Wrap" Width="100" Height="100" />
+                        <TextBox Name="TipBox3" TextWrapping="Wrap" Width="100" Height="100" />
+
+                    </StackPanel>
+                    
+                  
+                       
+                    
+                </StackPanel>
+                
+               <!--农房表-->
+                <StackPanel Margin="2" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="农房表"/>
+                        <dx:SimpleButton Margin="20,0,0,0" Click="FlushAreaDX_Click" Content="与分层表相差：" Glyph="{dx:DXImage Image=Refresh_16x16.png}"/>
+                        <dxe:TextEdit Name="AreaDxTextEdit" Margin="5,0,0,0" Width="100" IsEnabled="False"></dxe:TextEdit>
+                    </StackPanel>
+                    <StackPanel>
+                        <dxg:GridControl Height="100" Width="1000" HorizontalAlignment="Left" Name="NFTable" ItemsSource="{Binding NFs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <dxg:GridColumn  Header="年代"  FieldName="JGRQ" DisplayMemberBinding="{Binding JGRQ ,Mode=TwoWay}"  Width="55"/>
+                            <dxg:GridColumn  Header="原集体土地证"  FieldName="YJTTDSYZ" DisplayMemberBinding="{Binding YJTTDSYZ ,Mode=TwoWay}" MinWidth="50"  />
+
+                            <dxg:GridColumn  Header="原房产证"  FieldName="YFWSYQZ"  DisplayMemberBinding="{Binding YFWSYQZ ,Mode=TwoWay}" MinWidth="50"  />
+
+                            <dxg:GridColumn  Header="房屋来源"  FieldName="FWLY" DisplayMemberBinding="{Binding FWLY ,Mode=TwoWay}" MinWidth="40"  />
+                            <dxg:GridColumn  Header="产权来源"  FieldName="CQLY" DisplayMemberBinding="{Binding CQLY ,Mode=TwoWay}" MinWidth="40"  />
+
+                            <dxg:GridColumn  Header="所在层"  FieldName="SZC"    DisplayMemberBinding="{Binding SZC ,Mode=TwoWay}" Width="80"/>
+                            <dxg:GridColumn  Header="层主体结构"  FieldName="CZTJG"    DisplayMemberBinding="{Binding CZTJG ,Mode=TwoWay}" Width="80"/>
+                            <dxg:GridColumn  Header="层建筑面积"  FieldName="CJZMJ"  DisplayMemberBinding="{Binding CJZMJ ,Mode=TwoWay}" Width="80"/>
+
+                            <dxg:GridColumn  Header="建筑面积"  FieldName="JZMJ"  IsEnabled="False" DisplayMemberBinding="{Binding JZMJ ,Mode=TwoWay}" Width="60"/>
+                            <dxg:GridColumn  Header="发证面积"  FieldName="FZMJ"  IsEnabled="True" DisplayMemberBinding="{Binding FZMJ ,Mode=TwoWay}" Width="60"/>
+                            <dxg:GridColumn  Header="房产证号"  FieldName="SYQZH"  DisplayMemberBinding="{Binding SYQZH ,Mode=TwoWay}"  Width="180"/>
+                            <dxg:GridControl.View >
+                                <dxg:TableView   ShowGroupPanel="False"   AutoWidth="True" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </StackPanel>
+                </StackPanel>
+              <!--分层表-->
+                <StackPanel>
+                    <Label Content="分层表"/>
+                    <dxg:GridControl Height="100"  Width="900" HorizontalAlignment="Left" Name="FloorTable" ItemsSource="{Binding Floors, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <dxg:GridColumn  Header="所在层"  FieldName="SZC" DisplayMemberBinding="{Binding SZC ,Mode=TwoWay}" MinWidth="60"  />
+                        <dxg:GridColumn  Header="总层数"  FieldName="ZCS" DisplayMemberBinding="{Binding ZCS ,Mode=TwoWay}" MinWidth="60"  />
+                        <dxg:GridColumn  Header="层建筑面积"  FieldName="CJZMJ"  DisplayMemberBinding="{Binding CJZMJ ,Mode=TwoWay}"  Width="100"/>
+                        <dxg:GridControl.View >
+                            <dxg:TableView   ShowGroupPanel="False" AllowEditing="True"  AutoWidth="True" />
+                        </dxg:GridControl.View>
+                    </dxg:GridControl>
+                </StackPanel>
+               <!--签章表-->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="MDB签章表"/>
+                       
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <dxg:GridControl Height="100"  Width="900" HorizontalAlignment="Left"  Name="QZBTable"  ItemsSource="{Binding QZBs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <dxg:GridColumn  Header="起点号" DisplayMemberBinding="{Binding QDH ,Mode=TwoWay}" FieldName="QDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="终点号"  DisplayMemberBinding="{Binding ZDH ,Mode=TwoWay}" FieldName="ZDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="邻宗指界人" DisplayMemberBinding="{Binding LZDZJR ,Mode=TwoWay}"  FieldName="LZDZJR"   Width="300"/>
+                            <dxg:GridControl.View >
+                                <dxg:TableView  ShowGroupPanel="False" AllowEditing="True"  AutoWidth="True" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </StackPanel>
+                    
+                </StackPanel>
+                <!--标示表-->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="标示表"/>
+                        <Label Content="界址点个数总共：" Margin="20,0,0,0"/>
+                        <Label Content="{Binding JZXInfos.Count}"/>
+
+                        <dx:SimpleButton  Margin="20,0,0,0" Content="更新为档案袋界址线" Click="FlushJZXFromDangAnDai_Click" Glyph="{dx:DXImage Image=Refresh2_16x16.png}"></dx:SimpleButton>
+                        <dx:SimpleButton  Margin="20,0,0,0" Content="重新检查" Click="JZXFromDangAnDai_Click" Glyph="{dx:DXImage Image=Refresh2_16x16.png}"></dx:SimpleButton>
+                        
+                        <Label Name="errorLabel" Margin="20,0,0,0"  Foreground="#FF230808" BorderBrush="#FF320B0B"/>
+                        <Label Content="档案袋中签章表" Margin="500,0,0,0"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <dxg:GridControl Height="300" Name="BSBTable" ItemsSource="{Binding JZXInfos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <dxg:GridColumn  Header="起点号"  FieldName="QDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="终点号"  FieldName="ZDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="距离"  FieldName="TSBC" MinWidth="100"  />
+                            <dxg:GridColumn  Header="界址线位置"  FieldName="JZXWZ" MinWidth="100"  />
+                            <dxg:GridColumn  Header="界址线类别"  FieldName="JZXLB" MinWidth="100"  />
+                            <dxg:GridControl.View >
+                                <dxg:TableView   ShowGroupPanel="False" AllowEditing="True"  AutoWidth="True" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+
+                        <dxg:GridControl Height="300" Name="DangAnDaiBSBTable" >
+                            <dxg:GridColumn  Header="起点号"  FieldName="QDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="终点号"  FieldName="ZDH" MinWidth="60"  />
+                            <dxg:GridColumn  Header="距离"  FieldName="TSBC" MinWidth="100"  />
+                            <dxg:GridColumn  Header="界址线位置"  FieldName="JZXWZ" MinWidth="100"  />
+                            <dxg:GridColumn  Header="界址线类别"  FieldName="JZXLB" MinWidth="100"  />
+                            <dxg:GridControl.View >
+                                <dxg:TableView   ShowGroupPanel="False" AllowEditing="True"  AutoWidth="True" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </StackPanel>
+                    
+                    
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</dx:DXWindow>

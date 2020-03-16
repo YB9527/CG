@@ -1,0 +1,37 @@
+﻿<Window xmlns:mui="http://firstfloorsoftware.com/ModernUI"  x:Class="ProgressTask.SingleTaskForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgressTask"
+        mc:Ignorable="d"
+        Title="任务" Height="500" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Border BorderBrush="AliceBlue" BorderThickness="1" >
+            
+       
+        <Border BorderBrush="Green" BorderThickness="1" Margin="5,5,5,5">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <!--<ProgressBar   Height="10" Minimum="0" Maximum="1"  IsIndeterminate="True" Margin="0,5,3.6,1.6" VerticalAlignment="Top" />-->
+                        <ProgressBar Name="proBar"  Height="20"  Margin="0,15,3.6,1.6" VerticalAlignment="Top" />
+
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock Name="txt" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <mui:BBCodeBlock Name="log" IsEnabled="False" xml:space="preserve"></mui:BBCodeBlock>
+                    </Grid>
+
+                </Grid>
+            </ScrollViewer>
+        </Border>
+        </Border>
+    </Grid>
+</Window>

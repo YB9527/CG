@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="FileManager.Pages.PrintFilePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FileManager.Pages"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Uid="文件打印">
+    <UserControl.Resources>
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Style="{StaticResource borderStyle}">
+                    <dx:SimpleButton Click="LocalPrint_Click" Width="140" HorizontalAlignment="Left" Content="本地功能打印" ToolTip="调用计算机本地方法打印，调用的是计算机页面打印设置，优点稳定,不能设置单双页"  Glyph="{dx:DXImage Image=Print_32x32.png}"  />
+                </Border>
+                <Border Grid.Column="1" Style="{StaticResource borderStyle}">
+                    <dx:SimpleButton Click="SoftWarePrint_Click" Width="140" HorizontalAlignment="Left" Content="软件功能打印" ToolTip="调用的软件功能打印，优点速度快，注意打印出来的数据"     Glyph="{dx:DXImage Image=PrintArea_32x32.png}"  />
+                </Border>
+                <Border Grid.Column="2" Style="{StaticResource borderStyle}">
+                    <Label  Foreground="Red" Content="提示：目前只能打印Word，Excel，PDF，照片（jpg,png,jpeg）"></Label>
+                </Border>
+            </Grid>
+        </Grid>
+        <Border Grid.Row="1" Style="{StaticResource borderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <dx:SimpleButton Content="手动添加"  HorizontalAlignment="Left" Click="AddFile_Click" Width="100" Glyph="{dx:DXImage Image=AddFile_16x16.png}"/>
+                            <dx:SimpleButton Content="Excel指定添加"  HorizontalAlignment="Left" Click="AddExcelFile_Click"  ToolTip="必须在第一页sheet，列1：文件路径,列2：打印份数，,列3：是否双面打印" Margin="20,0,0,0" Width="120" Glyph="{dx:DXImage Image=ListBox_16x16.png}"/>
+                            <dx:SimpleButton Content="清空"  HorizontalAlignment="Left" Margin="20,0,0,0" Click="Delete_Click" Width="100" Glyph="{dx:DXImage Image=Close_16x16.png}"/>
+                            <dxe:ButtonEdit   Margin="60,0,0,0" DefaultButtonClick="OpenDir_Click"   Text="{Binding Dir, Mode=TwoWay}" Width="330"/>
+                            <dxe:CheckEdit  Margin="5,0,5,0" Content="递归查找"  IsChecked="{Binding IsDiGuiChaZhao}" ToolTip="此文件夹下所有符合条件的文件"></dxe:CheckEdit>
+                            <dx:SimpleButton Content="文件夹添加" Click="AddDirFile_Click" Width="100" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                        </StackPanel>
+                        <StackPanel >
+                            <Grid>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Margin="5" Name="pagerPageGrid">
+                    <!--<Views:PagerPage  Name="pagerPage" />-->
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

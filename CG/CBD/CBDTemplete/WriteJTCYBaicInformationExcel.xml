@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="get_" ClassType ="CBD.CBDModels.JTCY, CBD, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="3" rows = "13" end="0" cellTotal = "5">
+      <cell index="0" ref = "XM" />
+      <cell index="1" ref = "XB" />
+      <cell index="2" ref = "YHZGX" />
+      <cell index="3" ref = "ZJH" />
+      <cell index="4" ref = "SFGYR" />
+    </row>
+  </table>
+</propertys>

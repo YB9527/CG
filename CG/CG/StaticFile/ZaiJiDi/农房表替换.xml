@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="ZaiJiDi.ZaiJiDiModel.NF,ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <property key= "JZMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+
+  <property key= "FZMJ"    >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+  
+ 
+  <property key= "SYQZH"    default ="/" />
+  
+  <table tableIndex = "0" >
+    <row rowStartIndex ="5" rows = "3" cellTotal = "3">
+      <cell index="4" ref = "SZC" />
+      <cell index="5" ref = "CZTJG" />
+      <cell index="6" ref = "CJZMJ" />
+    </row>
+  </table>
+  
+</propertys>

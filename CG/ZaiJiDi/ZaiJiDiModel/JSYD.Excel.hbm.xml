@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="ZaiJiDi.ZaiJiDiModel.JSYD, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicnameToken = null">
+
+  <table index = "0" tableIndex = "0" >
+    <row method="set_" rowStartIndex ="4"  end="1" rows = "1" cellTotal = "77">
+      <cell index="1" ref = "ZDNUM" />
+      <cell index="2" ref = "ZH" />
+      <cell index="3" ref = "QLRMC" />
+      <cell index="4" ref = "ZJHM" />
+      <cell index="5" ref = "ZJLX" />
+      <cell index="6" ref = "TDZL" />
+      <cell index="7" ref = "YTDSYZSH" />
+      <cell index="8" ref = "TDYT" />
+      <cell index="9" ref = "TDDJ" />
+      <cell index="10" ref = "QSRQ" />
+      <cell index="11" ref = "ZZRQ" />
+      <cell index="12" ref = "SYNX" />
+      <cell index="13" ref = "TDJG" />
+      <cell index="14" ref = "TDYT2" />
+      <cell index="15" ref = "TDDJ2" />
+      <cell index="16" ref = "QSRQ2" />
+      <cell index="17" ref = "ZZRQ2" />
+      <cell index="18" ref = "SYNX2" />
+      <cell index="19" ref = "TDJG2" />
+      <cell index="20" ref = "TDYT3" />
+      <cell index="21" ref = "TDDJ3" />
+      <cell index="22" ref = "QSRQ3" />
+      <cell index="23" ref = "ZZRQ3" />
+      <cell index="24" ref = "SYNX3" />
+      <cell index="25" ref = "TDJJG3" />
+      <cell index="26" ref = "QLLX" />
+      <cell index="27" ref = "QLXZ" />
+      <cell index="28" ref = "TFH" />
+      <cell index="29" ref = "ZJR" />
+      <cell index="30" ref = "ZDMJ" />
+      <cell index="31" ref = "SYQMJ" />
+      <!--<cell index="32" ref = "Dymj" />
+			<cell index="33" ref = "Ftmj" />-->
+      <cell index="34" ref = "CZMJ" />
+      <!--<cell index="35" ref = "Wfmj" />
+			<cell index="36" ref = "Pzmj" />-->
+      <cell index="37" ref = "JZZDZMJ" />
+      <cell index="38" ref = "SZDZ" />
+      <cell index="39" ref = "SSNZ" />
+      <cell index="40" ref = "SZXZ" />
+      <cell index="41" ref = "SZBZ" />
+      <cell index="42" ref = "PZYT" />
+      <cell index="43" ref = "SJYT" />
+      <cell index="44" ref = "PZRQ" />
+      <cell index="45" ref = "SYQX" />
+      <cell index="46" ref = "ZZRQ4" />
+      <cell index="47" ref = "QDJG" />
+      <!--<cell index="48" ref = "Jzrjl" />
+			<cell index="49" ref = "Jzmd" />
+			<cell index="50" ref = "Jzxg" />
+			<cell index="51" ref = "Jzwzdmj" />-->
+      <cell index="52" ref = "JZWLX" />
+      <cell index="53" ref = "SBJZWQS" />
+      <cell index="54" ref = "ZDSM" />
+      <cell index="55" ref = "ZYJZDWSM" />
+      <cell index="56" ref = "ZYQSJXZXSM" />
+     
+      <cell index="58" ref = "QTSJ" />
+      <cell index="59" ref = "DCY" />
+      <cell index="60" ref = "DCRQ" />
+      <cell index="61" ref = "DCJS" />
+      <cell index="62" ref = "KZY" />
+      <!--<cell index="63" ref = "Kzrq" />-->
+      <cell index="64" ref = "KZJS" />
+      <cell index="65" ref = "SHY" />
+      <cell index="66" ref = "SHRQ" />
+      <cell index="67" ref = "SHYJ" />
+      <cell index="68" ref = "BZ" />
+    </row>
+
+  </table>
+
+
+</propertys>

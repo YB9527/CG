@@ -1,0 +1,123 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="ZaiJiDi.Pages.DataSource.ZJDDataSourcePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZaiJiDi.Pages.DataSource"
+             xmlns:Views="clr-namespace:WPFTemplate.Views;assembly=WPFTemplate"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Uid="三表设置数据源">
+    <UserControl.Resources>
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border Style="{StaticResource borderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" MinWidth="800"/>
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Margin="5,20,5,0"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel Orientation="Vertical"  >
+
+
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="行政代码表："  MinWidth="100" />
+                                    <dxe:ButtonEdit   Width="400"  DefaultButtonClick="OpenFile" Text="{Binding ZJDXZDMTablePath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton  Click="SelectZJDXZDMTable_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                                    <dx:SimpleButton Content="文件夹解析路径" Click="OpenDir" Glyph="{dx:DXImage Image=Open_16x16.png}"></dx:SimpleButton>
+                                    
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="宗地图MDB："  MinWidth="100" />
+                                    <dxe:ButtonEdit   Width="400"  DefaultButtonClick="OpenFile" Text="{Binding ZdinfoMDBPath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton Click="SelectMDBPath_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                </StackPanel>
+                                
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="两表MDB："  MinWidth="100" ToolTip="签章表、标示表" />
+                                    <dxe:ButtonEdit   Width="400"  DefaultButtonClick="OpenFile" Text="{Binding QZ_BSMDBPath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton Click="SelectQZ_BS_MDB_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                    <dx:SimpleButton Click="DangAnDaiRefeshMDB_Click"  Content="档案袋更新签章表" Glyph="{dx:DXImage Image=Refresh2_16x16.png}"/>
+                                </StackPanel>
+                                
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="家庭成员表："  MinWidth="100" />
+                                    <dxe:ButtonEdit   Width="400"  DefaultButtonClick="OpenFile" Text="{Binding JTCYTablePath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton Click="SelectJTCY_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                    <Label Content="记录列数："  MinWidth="80" Margin="5,0,0,0"/>
+                                    <dxe:TextEdit   MinWidth="30" MaskType="RegEx"  Mask="[0-9]*" Text="{Binding JTCYTableErrorCellIndex, Mode=TwoWay}" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="建设用地表："  MinWidth="100" />
+                                    <dxe:ButtonEdit   Width="400" DefaultButtonClick="OpenFile" Text="{Binding JSYDTablePath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton Click="SelectJSYD_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                    <Label Content="记录列数："  MinWidth="80" Margin="5,0,0,0"/>
+                                    <dxe:TextEdit   MinWidth="30" MaskType="RegEx"   Mask="[0-9]*"  Text="{Binding JSYDTableErrorCellIndex, Mode=TwoWay}" />
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="农房表："  MinWidth="100" />
+                                    <dxe:ButtonEdit DefaultButtonClick="OpenFile"   Width="400"  Text="{Binding NFTablePath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                    <dx:SimpleButton Click="SelectNF_Click" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                                    <Label Content="农房列数："  MinWidth="80" Margin="5,0,0,0"/>
+                                    <dxe:TextEdit   MinWidth="30" MaskType="RegEx"   Mask="[0-9]*"  Text="{Binding NFTableErrorCellIndex, Mode=TwoWay}" />
+                                    <Label Content="分层列数："  MinWidth="80" Margin="5,0,0,0"/>
+                                    <dxe:TextEdit   MinWidth="30" MaskType="RegEx"   Mask="[0-9]*"  Text="{Binding FloorTableErrorCellIndex, Mode=TwoWay}" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Content="地籍图："  MinWidth="100" />
+                                    <dxe:ButtonEdit   Width="400"   ToolTip="只为打开地籍图" DefaultButtonClick="OpenFile" Text="{Binding DWGPath, Mode=TwoWay}" EditValueChanged="EditValueChanged"/>
+                                   
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,50,0,0" HorizontalAlignment="Center">
+                                    <dx:SimpleButton  Height="30" Content="保存" Margin="0,0,20,0" Width="100" Click="Save_Click"  HorizontalAlignment="Right" Glyph="{dx:DXImage Image=ExportFile_16x16.png}"/>
+                                    <dx:SimpleButton Height="30" Content="检查数据" Margin="0,0,20,0" Width="100" Click="Check_Click"  HorizontalAlignment="Right" Glyph="{dx:DXImage Image=Edit_16x16.png}"/>
+                                   
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="0,10,0,0" Name="pagerPageGird">
+                           
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label Content="问题集合："></Label>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,5,0,0">
+                        <ScrollViewer>
+                            <ListBox Name="ErrorListBox" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"></ListBox>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+        </Border>
+    </Grid>
+</UserControl>
+

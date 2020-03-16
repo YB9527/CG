@@ -1,0 +1,33 @@
+﻿<dx:DXWindow
+    x:Class="ShowDialogManger.MessageBoxCustom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="提示" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" 
+    >
+    <Window.Resources>
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"  Style="{StaticResource borderStyle}">
+            <DockPanel>
+                <TextBox  Name="MsgTextBox" VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center"></TextBox>
+            </DockPanel>
+        </Border>
+        <Border Grid.Row="1"  Style="{StaticResource borderStyle}">
+            <Grid>
+                <dx:SimpleButton Content="是" Width="70" Margin="-100,0,0,0" Glyph="{dx:DXImage Image=Apply_16x16.png}" Click="SimpleButton_Click"/>
+                <dx:SimpleButton Content="否" Name="NoButton" Margin="100,0,0,0" Width="70" Glyph="{dx:DXImage Image=Cancel_16x16.png}" Click="NoButton_Click"/>
+            </Grid>
+        
+        </Border>
+    </Grid>
+</dx:DXWindow>

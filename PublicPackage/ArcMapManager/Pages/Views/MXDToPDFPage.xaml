@@ -1,0 +1,34 @@
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="ArcMapManager.Pages.Views.MXDToPDFPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Uid="PDF转换界面">
+    
+    <Grid Margin="20">
+        <ScrollViewer  VerticalScrollBarVisibility="Auto">
+            <StackPanel  Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Orientation" Value="Horizontal" />
+                        <Setter Property="Margin" Value="0,0,0,3" />
+                    </Style>
+                </StackPanel.Resources>
+                <StackPanel Orientation="Horizontal">
+
+                    <dx:SimpleButton Content="MXD文件夹" Click="SelectDir_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" ></dx:SimpleButton>
+                    <TextBox Name="MxdDir" MinWidth="395"  LostFocus="MxdDir_LostFocus"/>
+                </StackPanel>
+                <StackPanel>
+                  
+                    <dxe:ListBoxEdit  Name="ListView"  MinHeight="300" MaxHeight="500" MinWidth="500" Width="400"/>
+                </StackPanel>
+                <StackPanel>
+                    <dx:SimpleButton Content="开始转换" Click="Button_Click_2" Margin="150,0,0,0"  Glyph="{dx:DXImage Image=Apply_32x32.png}" ></dx:SimpleButton>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

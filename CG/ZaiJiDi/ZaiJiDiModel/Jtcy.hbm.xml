@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="YanBo_CG"
+                   namespace="YanBo_CG.Zjd.ZjdPo">
+  <class name="Jtcy" table="Jtcy" lazy="true" >
+
+    <id name="Objectid" column="Objectid" type="Int32" >
+      <generator class="native" />
+    </id>
+
+    <property name="Cbflx" type="string">
+      <column name="承包方类型" length="50"/>
+    </property>
+
+    <property name="Hh" type="string">
+      <column name="户号" length="50"/>
+    </property>
+
+    <property name="Xm" type="string">
+      <column name="成员姓名" length="50"/>
+    </property>
+
+    <property name="Sex" type="string">
+      <column name="成员性别" length="50"/>
+    </property>
+
+    <property name="Cyzjlx" type="string">
+      <column name="成员证件类型" length="50"/>
+
+    </property>
+    <property name="Gmsfhm" type="string">
+      <column name="证件号码" length="50"/>
+    </property>
+    <property name="Yhzgx" type="string">
+      <column name="与户主关系" length="50"/>
+    </property>
+
+
+    <property name="Qlrlx" type="string">
+      <column name="权利人类型" length="50"/>
+    </property>
+    <property name="Sfgyr" type="string">
+      <column name="是否共有人" length="50"/>
+    </property>
+    <property name="Gzdw" type="string">
+      <column name="工作单位" length="50"/>
+    </property>
+    <property name="Email" type="string">
+      <column name="电子邮件" length="50"/>
+    </property>
+    <property name="Address" type="string">
+      <column name="地址" length="50"/>
+    </property>
+    <property name="Txdz" type="string">
+      <column name="通讯地址" length="50"/>
+    </property>
+    <property name="Yzbm" type="string">
+      <column name="邮政编码" length="50"/>
+    </property>
+    <property name="Lxdh" type="string">
+      <column name="联系电话" length="50"/>
+    </property>
+    <property name="Dcy" type="string">
+      <column name="调查员" length="50"/>
+    </property>
+    <property name="Dcrq" type="DateTime">
+      <column name="调查日期" />
+    </property>
+    <property name="Dcjs" type="string">
+      <column name="调查记事" length="255"/>
+    </property>
+    <property name="Shr" type="string">
+      <column name="审核人" length="50"/>
+    </property>
+    <property name="Shrq" type="DateTime">
+      <column name="审核日期" />
+    </property>
+    <property name="Shyj" type="string">
+      <column name="审核意见" length="50"/>
+    </property>
+
+    <property name="Mz" type="string">
+      <column name="民族" length="50"/>
+    </property>
+    <property name="Birthday" type="DateTime">
+      <column name="生日" />
+    </property>
+
+    <property name="Bz" type="string">
+      <column name="备注" length="50"/>
+    </property>
+    <property name="Cbfbm" type="string">
+      <column name="承包方编码" length="50"/>
+    </property>
+
+    
+
+  </class>
+</hibernate-mapping>

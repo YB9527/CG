@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="JTSYQManager.JTSYQModel.JTSYQ, JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  <property key= "QLR1" value = "get_QLR"  	>
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "成都高新区," parameterClassType = "System.String,System.String" />
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "农民集体," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "QLR3" value = "get_QLR"  	>
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "成都高新区," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "QLR2" value = "get_QLR"  	>
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "农民集体," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "Area"   >
+   
+  </property>
+  <property key="XiangZheng" value="get_XZDM">
+    <ChildMethoed value = "get_XiangZheng" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <property key="Cun" value="get_XZDM">
+    <ChildMethoed value = "get_Cun" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <property key="Zu" value="get_XZDM">
+    <ChildMethoed value = "get_Zu" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <table tableIndex = "0" index = "1">
+    <row rowStartIndex ="1" rows = "1" cellTotal = "27">
+      <cell index="0" ref = "BM" />
+      <cell index="1" ref = "QLR3" />
+      <cell index="2" ref = "QLR1" />
+      <cell index="7" ref = "Area" />
+      <cell index="16" ref = "SZD" />
+      <cell index="17" ref = "SZN" />
+      <cell index="18" ref = "SZX" />
+      <cell index="19" ref = "SZB" />
+      <cell index="24" ref = "XiangZheng" />
+      <cell index="25" ref = "Cun" />
+      <cell index="26" ref = "Zu" />
+    </row>
+  </table>
+</propertys>

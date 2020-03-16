@@ -1,0 +1,133 @@
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             x:Class="WPFTemplate.Views.PagerPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid>
+
+        <Grid Name="mainGrid">
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <dxg:GridControl Name="tabGrid" Grid.Row="0" SelectionMode="Row" >
+
+                    <dxg:GridControl.Columns >
+                        <dxg:GridColumn  Width="55" AllowEditing="True"   Name="select" Binding="{Binding Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   >
+                            <dxg:GridColumn.HeaderTemplate>
+                                <!--Visible="{Binding CheckboxSelection}"-->
+                                <DataTemplate>
+
+                                    <CheckBox Name="SelectCheckBox" Unchecked="SelectAll_Unchecked" Checked="SelectAll_Checked" Content="选择"></CheckBox>
+                                </DataTemplate>
+                            </dxg:GridColumn.HeaderTemplate>
+                        </dxg:GridColumn>
+
+                        <!--<dxg:GridColumn  AllowEditing="True"  Header="编号"   FieldName="OrderID" MinWidth="50" Width="100" SortIndex="0" SortOrder="Descending" FixedWidth="True" />
+                        <dxg:GridColumn  Header="国家"  FieldName="Country" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="城市"  FieldName="City" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="单价"  FieldName="UnitPrice" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="生日"  FieldName="Birth" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="单价"  FieldName="UnitPrice" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="生日"  FieldName="Birth" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="单价"  FieldName="UnitPrice" MinWidth="50" Width="100" />
+                        <dxg:GridColumn  Header="生日"  FieldName="Birth" MinWidth="50" Width="100" />-->
+
+                    </dxg:GridControl.Columns>
+                    <!--<dxg:GridControl.TotalSummary>
+                        <dxg:GridSummaryItem FieldName="{Binding TotalBy}"  SummaryType="Count" />
+                        <dxg:GridSummaryItem SummaryType="Count" DisplayFormat="总记录数:{0:0}" Alignment="Right" />
+                    </dxg:GridControl.TotalSummary>-->
+                    <dxg:GridControl.View >
+                        <dxg:TableView  x:Name="view" ShowGroupPanel="False" AllowFixedGroups="True" 
+                        AllowCascadeUpdate="True"  WaitIndicatorType="Panel"
+                       AllowPerPixelScrolling="True"  NavigationStyle="Cell" AllowEditing="False" 
+                        AutoWidth="False" ShowFixedTotalSummary="True"   
+                                        HorizontalScrollbarVisibility="Auto"
+                                        VerticalScrollbarVisibility="Auto"
+                                       
+                                        />
+                    </dxg:GridControl.View>
+
+                </dxg:GridControl>
+                <Grid  Grid.Row="1" Height="25" Margin="0,-65,0,0"   x:Name="dPager" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Margin="5,1,1,1"   Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <Label VerticalAlignment="Center">共</Label>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Name="lblTotal"></Label>
+                            <Label VerticalAlignment="Center">条记录,</Label>
+                            <Label VerticalAlignment="Center">每页</Label>
+                            <ComboBox VerticalAlignment="Center"  Name="cboPageSize"
+                  MinWidth="50"  SelectedIndex="1">
+
+                                <ComboBoxItem>100</ComboBoxItem>
+                                <ComboBoxItem>1000</ComboBoxItem>
+                                <ComboBoxItem>10000</ComboBoxItem>
+                                <ComboBoxItem>100000</ComboBoxItem>
+                                <ComboBoxItem>10000000</ComboBoxItem>
+                            </ComboBox>
+                            <Label VerticalAlignment="Center">条,</Label>
+                            <Label VerticalAlignment="Center">共</Label>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Name="lblPageCount"></Label>
+                            <Label VerticalAlignment="Center">页</Label>
+                            <dxe:ButtonEdit Grid.Column="1" VerticalAlignment="Center"
+                    x:Name="editor3"
+                    ShowText="False" Width="140"
+                    AllowDefaultButton="False">
+                                <dxe:ButtonInfo x:Name="btnFirst" GlyphKind="First" ToolTipService.ToolTip="首页" Click="btnFirst_Click" />
+                                <dxe:ButtonInfo x:Name="btnLeft" GlyphKind="Left" ToolTipService.ToolTip="上一页" Click="btnLeft_Click" />
+                                <dxe:ButtonInfo x:Name="btnRight" GlyphKind="Right" ToolTipService.ToolTip="下一页" Click="btnRight_Click" />
+                                <dxe:ButtonInfo x:Name="btnLast" GlyphKind="Last" ToolTipService.ToolTip="尾页" Click="btnLast_Click"/>
+                                <dxe:ButtonInfo x:Name="btnRefresh" GlyphKind="Refresh" ToolTipService.ToolTip="刷新" Click="btnRefresh_Click"/>
+                            </dxe:ButtonEdit>
+
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <TextBox VerticalAlignment="Center" Name="txtJumpPage" Height="21" Width="60" Margin="5,1,1,1" ></TextBox>
+                                <Button VerticalAlignment="Center" Name="btnJump" ToolTip="跳转" Content="GO" Height="21" Width="60" Margin="5,1,1,1" Click="btnJump_Click"></Button>
+                            </StackPanel>
+
+
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1" Name="ExportBtuGrid" >
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <dxe:ComboBoxEdit  Width="100" Name="FormatComboBox" SelectedIndex="0">
+                                <dxe:ComboBoxEditItem Content="XLS"></dxe:ComboBoxEditItem>
+                                <dxe:ComboBoxEditItem Content="XLSX"></dxe:ComboBoxEditItem>
+                                <dxe:ComboBoxEditItem Content="PDF"></dxe:ComboBoxEditItem>
+                                <dxe:ComboBoxEditItem Content="Image"></dxe:ComboBoxEditItem>
+                                <dxe:ComboBoxEditItem Content="Html"></dxe:ComboBoxEditItem>
+                            </dxe:ComboBoxEdit>
+                            <dx:SimpleButton  HorizontalAlignment="Right" Content="导出表格" Click="ExportTable_Click" Width="100" Glyph="{dx:DXImage Image=Right_16x16.png}" GlyphAlignment="Left"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+
+
+
+    </Grid>
+
+</UserControl>

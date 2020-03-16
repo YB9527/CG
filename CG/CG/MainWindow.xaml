@@ -1,0 +1,263 @@
+﻿<dxr:DXRibbonWindow xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+                    xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"
+                    xmlns:dxnb="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+                    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                    xmlns:XZDMManager="clr-namespace:Public;assembly=Public" 
+                    x:Class="CG.MainWindow"
+    Title="产改软件"  WindowStartupLocation="CenterScreen" Height="700" Width="1100"  WindowState="Maximized" UseLayoutRounding="True" Icon="{dx:DXImage Image=BOSale_32x32.png}"
+           Closing="DXRibbonWindow_Closing" ShowTitle="False"  
+    >
+    <dxr:DXRibbonWindow.Resources>
+        <ResourceDictionary>
+            <dxsch:SchedulerUICommand x:Key="commands"/>
+            <dxsch:SchedulerControlStringIdConverter x:Key="stringIdConverter"/>
+        </ResourceDictionary>
+    </dxr:DXRibbonWindow.Resources>
+
+    <dxb:BarManager x:Name="barManager1" ToolbarGlyphSize="Small">
+        <dxb:BarManager.Items>
+            <dxb:BarButtonItem Command="{Binding OpenSchedule, Mode=OneTime, Source={StaticResource commands}}" x:Name="biOpenSchedule"/>
+            <dxb:BarButtonItem Command="{Binding SaveSchedule, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSaveSchedule"/>
+            <dxb:BarButtonItem Command="{Binding NewAppointment, Mode=OneTime, Source={StaticResource commands}}" x:Name="biNewAppointment"/>
+            <dxb:BarButtonItem Command="{Binding NewRecurringAppointment, Mode=OneTime, Source={StaticResource commands}}" x:Name="biNewRecurringAppointment"/>
+            <dxb:BarButtonItem Command="{Binding NavigateViewBackward, Mode=OneTime, Source={StaticResource commands}}" x:Name="biNavigateViewBackward"/>
+            <dxb:BarButtonItem Command="{Binding NavigateViewForward, Mode=OneTime, Source={StaticResource commands}}" x:Name="biNavigateViewForward"/>
+            <dxb:BarButtonItem Command="{Binding GotoToday, Mode=OneTime, Source={StaticResource commands}}" x:Name="biGotoToday"/>
+            <dxb:BarButtonItem Command="{Binding ViewZoomIn, Mode=OneTime, Source={StaticResource commands}}" x:Name="biViewZoomIn"/>
+            <dxb:BarButtonItem Command="{Binding ViewZoomOut, Mode=OneTime, Source={StaticResource commands}}" x:Name="biViewZoomOut"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToDayView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToDayView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToWorkWeekView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToWorkWeekView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToWeekView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToWeekView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToFullWeekView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToFullWeekView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToMonthView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToMonthView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToTimelineView, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToTimelineView"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToGroupByNone, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToGroupByNone"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToGroupByDate, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToGroupByDate"/>
+            <dxb:BarCheckItem Command="{Binding SwitchToGroupByResource, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchToGroupByResource"/>
+            <dxsch:TimeScaleBarSubItem Command="{Binding SwitchTimeScalesUICommand, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchTimeScalesUICommand" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxb:BarEditItem Command="{Binding SetTimeIntervalCount, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSetTimeIntervalCount"/>
+            <dxsch:SwitchTimeScalesCaptionBarSubItem Command="{Binding SwitchTimeScalesCaptionUICommand, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchTimeScalesCaptionUICommand" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxb:BarCheckItem Command="{Binding SwitchCompressWeekend, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchCompressWeekend"/>
+            <dxb:BarCheckItem Command="{Binding SwitchShowWorkTimeOnly, Mode=OneTime, Source={StaticResource commands}}" x:Name="biSwitchShowWorkTimeOnly"/>
+            <dxsch:SnapToCellsSubItem Command="{Binding ChangeSnapToCellsUI, Mode=OneTime, Source={StaticResource commands}}" x:Name="biChangeSnapToCellsUI" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxsch:EditAppointmentSeriesBarItem Command="{Binding EditAppointmentSeriesGroup, Mode=OneTime, Source={StaticResource commands}}" x:Name="biEditAppointmentSeriesGroup" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxb:BarButtonItem Command="{Binding EditAppointment, Mode=OneTime, Source={StaticResource commands}}" x:Name="biEditAppointment"/>
+            <dxsch:DeleteAppointmentSeriesBarItem Command="{Binding DeleteAppointmentSeriesGroup, Mode=OneTime, Source={StaticResource commands}}" x:Name="biDeleteAppointmentSeriesGroup" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxb:BarButtonItem Command="{Binding DeleteAppointment, Mode=OneTime, Source={StaticResource commands}}" x:Name="biDeleteAppointment"/>
+            <dxsch:ChangeStatusBarItem Command="{Binding ChangeAppointmentStatus, Mode=OneTime, Source={StaticResource commands}}" x:Name="biChangeAppointmentStatus" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxsch:ChangeLabelBarItem Command="{Binding ChangeAppointmentLabel, Mode=OneTime, Source={StaticResource commands}}" x:Name="biChangeAppointmentLabel" SchedulerControl="{Binding ElementName=schedulerControl1}"/>
+            <dxb:BarCheckItem Command="{Binding ToggleRecurrence, Mode=OneTime, Source={StaticResource commands}}" x:Name="biToggleRecurrence"/>
+        </dxb:BarManager.Items>
+        <dx:DXDockPanel>
+            <dxr:RibbonControl  DockPanel.Dock="Top" RibbonStyle="Office2010" ToolbarShowMode="Hide" Margin="0" ShowApplicationButton="False" ToolbarShowCustomizationButton="False">
+                <dxr:RibbonDefaultPageCategory Caption="Default Category" >
+                    <dxr:RibbonPage Caption="集体所有权">
+
+                        <dxr:RibbonPageGroup Caption="文件配置" IsCaptionButtonEnabled="True">
+                            <dxb:BarButtonItem  ItemClick="OpenMxd_Click" Content="配置MXD路径" Name="OpenMxdBtu" LargeGlyph="{dx:DXImage Image=BOCountry_32x32.png}" Glyph="{dx:DXImage Image=AddFile_32x32.png}" RibbonStyle="Large" >
+                            </dxb:BarButtonItem>
+                            <dxb:BarButtonItem Content="其他文件配置" ItemClick="FileConfig_Click" Glyph="{dx:DXImage Image=Reading_32x32.png}" LargeGlyph="{dx:DXImage Image=SwitchRowColumn_32x32.png}"/>
+                        </dxr:RibbonPageGroup>
+
+                        <dxr:RibbonPageGroup Caption="图处理" SmallGlyph="{dx:DXImage Image=LineItem_16x16.png}" ShowCaptionButton="False" IsCaptionButtonEnabled="True">
+                            <dxb:BarButtonItem Content="打开Map" ItemClick="OpenMxd2_Click" Glyph="{dx:DXImage Image=OpenHyperlink_32x32.png}" LargeGlyph="{dx:DXImage Image=OpenHyperlink_32x32.png}"/>
+                            <dxb:BarButtonItem Content="保存Map" ItemClick="SaveMxd_Click" Glyph="{dx:DXImage Image=OpenHyperlink_32x32.png}" LargeGlyph="{dx:DXImage Image=SaveTheme_32x32.png}"/>
+                            <dxb:BarButtonItem Content="1生成图幅框" ItemClick="CreateTuFuGuang_Click" Glyph="{dx:DXImage Image=New_16x16.png}"/>
+                            <dxb:BarButtonItem Content="2刷新图幅号" ItemClick="FlushTuFu_Click" Glyph="{dx:DXImage Image=Apply_16x16.png}"/>
+                            <dxb:BarButtonItem Content="3删除图幅框"  ItemClick="DeleteTuFuKuang_Click" Glyph="{dx:DXImage Image=Cancel_16x16.png}"/>
+
+
+                            <dxb:BarButtonItem Content="1提取界址点" ItemClick="CreateJZD_Click" Glyph="{dx:DXImage Image=LabelsCenter_32x32.png}" RibbonStyle="Default"/>
+                            <dxb:BarButtonItem Content="2界址点编码" ItemClick="JZDHNumber_Click" Glyph="{dx:DXImage Image=BringToFrontOfText_32x32.png}"/>
+                            <dxb:BarButtonItem Content="3删除界址点" ItemClick="DeleteJZD_Click" Glyph="{dx:DXImage Image=Cancel_16x16.png}"/>
+
+                            <dxb:BarButtonItem Content="四至开始编辑" ItemClick="SiZiStart_Click" LargeGlyph="{dx:DXImage Image=EditContact_32x32.png}" Glyph="{dx:DXImage Image=EditContact_16x16.png}"/>
+
+                            <dxb:BarButtonItem  Content="MXD导出PDF" ItemClick="MXDToPDF_Click" Glyph="{dx:DXImage Image=ExportToPDF_16x16.png}" LargeGlyph="{dx:DXImage Image=ExportToPDF_32x32.png}"/>
+
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="检查">
+
+                            <dxb:BarButtonItem Content="检查处理数据" ItemClick="CheckBasicData_Click" LargeGlyph="{dx:DXImage Image=Apply_32x32.png}" Glyph="{dx:DXImage Image=Apply_16x16.png}"/>
+
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="成果">
+                            <dxb:BarButtonItem Content="成果输出" ItemClick="ExportData_Click" LargeGlyph="{dx:DXImage Image=EqualTo_16x16.png}" RibbonStyle="Large"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="其他功能">
+                            <dxb:BarButtonItem Content="打印" LargeGlyph="{dx:DXImage Image=Print_32x32.png}" Glyph="{dx:DXImage Image=Print_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+
+
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Caption="ArcGis工具">
+                        <dxr:RibbonPageGroup Caption="数据转换">
+                            <dxb:BarButtonItem Content="Tif转Image" ItemClick="TifToImage_Click" LargeGlyph="{dx:DXImage Image=ClearRules_32x32.png}"/>
+                            <dxb:BarButtonItem Content="地图发布" ItemClick="MapOnServer_Click" LargeGlyph="{dx:DXImage Image=BOLocalization_32x32.png}" Glyph="{dx:DXImage Image=BOLocalization_16x16.png}"/>
+                            <dxb:BarButtonItem Content="宅基地转SHP"    ItemClick="ExcelToMap_Click" LargeGlyph="{dx:DXImage Image=ImportMap_32x32.png}" Glyph="{dx:DXImage Image=ImportMap_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="导出">
+                            <dxb:BarButtonItem Content="分图" ItemClick="TifToImage_Click" LargeGlyph="{dx:DXImage Image=ClearRules_32x32.png}"/>
+                          
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Caption="宅基地">
+                        <dxr:RibbonPageGroup Caption="数据源设置检查">
+                            <dxb:BarButtonItem Content="三表数据源" ItemClick="ZJDDataSourcePage_Click" LargeGlyph="{dx:DXImage Image=FormatAsTable_32x32.png}" Glyph="{dx:DXImage Image=FormatAsTable_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="成果">
+                            <dxb:BarButtonItem Content="导表"  ItemClick="ZJDExportData_Click" LargeGlyph="{dx:DXImage Image=Right_32x32.png}" Glyph="{dx:DXImage Image=Download_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+
+                    </dxr:RibbonPage>
+
+                    <dxr:RibbonPage Caption="承包地">
+                        <dxr:RibbonPageGroup Caption="表格转换">
+                            <dxb:BarButtonItem Content="承包地转表" ItemClick="CBDTableChange_Click" LargeGlyph="{dx:DXImage Image=DrillDown_32x32.png}" Glyph="{dx:DXImage Image=DrillDown_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Caption="辅助功能">
+                        <dxr:RibbonPageGroup Caption="Excel">
+                            <dxb:BarButtonItem Content="内容替换" LargeGlyph="{dx:DXImageOffice2013 Image=Replace_32x32.png}"/>
+                            <dxb:BarButtonItem Content="文件合并" Glyph="{dx:DXImage Image=MoreFunctions_32x32.png}" LargeGlyph="{dx:DXImage Image=MoreFunctions_32x32.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Word">
+                            <dxb:BarButtonItem Content="内容替换" LargeGlyph="{dx:DXImageOffice2013 Image=Replace_32x32.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="PDF" Glyph="{dx:DXImage Image=Insert_32x32.png}">
+                            <dxb:BarButtonItem Content="定点插入文字" LargeGlyph="{dx:DXImage Image=Insert_32x32.png}" Glyph="{dx:DXImage Image=Insert_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="打印">
+                            <dxb:BarButtonItem Content="文件夹打印" LargeGlyph="{dx:DXImage Image=Printer_32x32.png}" Glyph="{dx:DXImage Image=Printer_16x16.png}"/>
+                            <dxb:BarButtonItem Content="Excel指定打印" LargeGlyph="{dx:DXImage Image=PrintArea_32x32.png}" Glyph="{dx:DXImage Image=Print_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="File">
+                            <dxb:BarButtonItem Content="剪切" LargeGlyph="{dx:DXImage Image=Clip_32x32.png}" Glyph="{dx:DXImage Image=Clip_16x16.png}"/>
+                            <dxb:BarButtonItem Content="复制" LargeGlyph="{dx:DXImage Image=Copy_32x32.png}" Glyph="{dx:DXImage Image=Copy_16x16.png}"/>
+                            <dxb:BarButtonItem Content="查找" LargeGlyph="{dx:DXImage Image=FindByID_32x32.png}" Glyph="{dx:DXImage Image=FindByID_16x16.png}"/>
+                            <dxb:BarButtonItem Content="更名" LargeGlyph="{dx:DXImageOffice2013 Image=Replace_32x32.png}"/>
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage x:Name="ribbonPage_Main" Caption="系统设置">
+                        <dxr:RibbonPageGroup x:Name="ribbonPageGroup_Main" Caption="主题">
+                            <dxr:RibbonGalleryBarItem x:Name="ribbonGalleryBarItem_Theme">
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxr:RibbonGalleryItemThemeSelectorBehavior/>
+                                </dxmvvm:Interaction.Behaviors>
+                            </dxr:RibbonGalleryBarItem>
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                   
+
+                </dxr:RibbonDefaultPageCategory>
+            </dxr:RibbonControl>
+            <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom" Padding="0" Margin="0" MinHeight="15" Height="20">
+                <dxr:RibbonStatusBarControl.RightItems>
+                    <dxb:BarButtonItem Content="联系QQ：525730167" LargeGlyph="{dx:DXImage Image=BOContact2_32x32.png}"/>
+                </dxr:RibbonStatusBarControl.RightItems>
+                <dxr:RibbonStatusBarControl.LeftItems>
+                    <dxb:BarButtonItem Content="版本V1.0"/>
+                </dxr:RibbonStatusBarControl.LeftItems>
+            </dxr:RibbonStatusBarControl>
+            <dxd:DockLayoutManager x:Name="dockLayoutManager">
+                <dxd:LayoutGroup>
+                    <dxd:TabbedGroup Name="tabbedGroup">
+                        <dxd:LayoutPanel Name="XZDMDataPage" Caption="行政代码表">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <TreeView x:Name="tvProperty" BorderThickness="0">
+                                        <TreeView.ItemContainerStyle >
+                                            <Style TargetType="TreeViewItem">
+                                                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"></Setter>
+                                            </Style>
+                                        </TreeView.ItemContainerStyle>
+
+                                        <!--设置treeview背景-->
+                                        <TreeView.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <!--<GradientStop Color="#FFAFCF99" Offset="0"/>
+                        <GradientStop Color="#FFF0A3A3" Offset="1"/>-->
+                                            </LinearGradientBrush>
+                                        </TreeView.Background>
+                                        <!--加载treeview数据-->
+                                        <TreeView.ItemTemplate >
+                                            <HierarchicalDataTemplate   DataType="{x:Type XZDMManager:PropertyNodeItem}" ItemsSource="{Binding Path=Children}">
+                                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                                    <CheckBox    IsChecked="{Binding IsSelected}" Click="CheckBox_Click" >
+                                                    </CheckBox>
+                                                    <TextBlock PreviewMouseLeftButtonUp="TextBlock_PreviewMouseLeftButtonUp"  Text="{Binding Path=DisplayName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2,0" ></TextBlock>
+                                                    <!--<ContentPresenter   Content="{Binding Path=DisplayName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2,0"  />-->
+                                                    <!--<TextBlock VerticalAlignment="Center" Text="{Binding DisplayName}" Foreground="White" FontSize="14"/>-->
+                                                    <StackPanel.ToolTip>
+                                                        <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap"  />
+                                                    </StackPanel.ToolTip>
+                                                </StackPanel>
+                                            </HierarchicalDataTemplate>
+                                        </TreeView.ItemTemplate>
+                                    </TreeView>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </dxd:LayoutPanel>
+                        <dxd:LayoutPanel Name="dataPage" Caption="数据">
+                            
+                                <dxwui:PageView x:Name="pageView" Padding="0" HorizontalAlignment="Left" PageHeadersAlignment="Bottom" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"  >
+                                    <!--<dxwui:PageViewItem Header="99999a" Margin="0" Padding="0" >
+
+                                        <WPFMangager1:PagerPage></WPFMangager1:PagerPage>
+
+                                    </dxwui:PageViewItem>-->
+                                   
+                                </dxwui:PageView>
+                        
+                            
+                        </dxd:LayoutPanel>
+                      
+                       
+                        <dxd:LayoutPanel ItemWidth="100" Caption="" Visibility="Hidden" ShowCaption="False" ShowBorder="False" Background="Transparent">
+                            <dxnb:NavBarControl x:Name="navBarControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1">
+                                <dxnb:NavBarControl.View>
+                                    <dxnb:NavigationPaneView IsExpandButtonVisible="False"/>
+                                </dxnb:NavBarControl.View>
+                                <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png">
+                                    <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
+                                </dxnb:NavBarGroup>
+                                <dxnb:NavBarGroup Header="Group2" ImageSource="Images/Icons/Group.png">
+                                    <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
+                                    <dxnb:NavBarItem Content="Item5" ImageSource="Images/Icons/Item.png"/>
+                                </dxnb:NavBarGroup>
+                                <dxnb:NavBarGroup x:Name="navBarGroup1" Header="navBarGroup1"/>
+                            </dxnb:NavBarControl>
+                        </dxd:LayoutPanel>
+
+
+
+                    </dxd:TabbedGroup>
+                    <dxd:LayoutGroup Orientation="Vertical" ItemWidth="5*" >
+                        <dxd:LayoutGroup/>
+                        <dxd:LayoutGroup/>
+                        <dxd:LayoutGroup/>
+                        <dxd:DocumentGroup x:Name="documentGroup" >
+                            <dxd:DocumentPanel Caption="日志">
+                                <Grid Name="mapGrid"/>
+                            </dxd:DocumentPanel>
+                            
+                        </dxd:DocumentGroup>
+                    </dxd:LayoutGroup>
+                </dxd:LayoutGroup>
+            </dxd:DockLayoutManager>
+        </dx:DXDockPanel>
+    </dxb:BarManager>
+</dxr:DXRibbonWindow>

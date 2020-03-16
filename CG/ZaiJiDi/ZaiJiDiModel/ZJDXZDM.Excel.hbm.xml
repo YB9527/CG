@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="ZaiJiDi.ZaiJiDiModel.ZJDXZDM, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="1" rows = "1" >
+      <cell index="0" ref = "DJZQDM" />
+      <cell index="1" ref = "DJZQMC" />
+      <cell index="2" ref = "XiangZheng" />
+      <cell index="3" ref = "Cun" />
+      <cell index="4" ref = "Zu" />
+      <cell index="5" ref = "DCRQ" />
+      <cell index="6" ref = "DCY" />
+      <cell index="7" ref = "SHRQ" />
+      <cell index="8" ref = "SHY" />
+      <cell index="9" ref = "ZTRQ" />
+      <cell index="10" ref = "ZTY" />
+      <cell index="11" ref = "ZTSHRQ" />
+      <cell index="12" ref = "ZTSHY" />
+      <cell index="13" ref = "ZJR" />
+      <cell index="15" ref = "TBRQ" />
+    </row>
+  </table>
+
+
+</propertys>

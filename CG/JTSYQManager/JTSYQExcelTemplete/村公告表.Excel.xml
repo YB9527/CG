@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="JTSYQManager.JTSYQModel.JTSYQ, JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  <property key= "QLR1" value = "get_QLR"  	>
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "成都高新区," parameterClassType = "System.String,System.String" />
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "农民集体," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "QLR2" value = "get_QLR"  	>
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "农民集体," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "Area"   >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f4" parameterClassType = "System.String" />
+  </property>
+  <table tableIndex = "1" index = "1">
+    <row rowStartIndex ="4" rows = "1" cellTotal = "10">
+      <cell index="1" ref = "QLR1" />
+      <cell index="2" ref = "QLR2" />
+      <cell index="3" ref = "BM" />
+      <cell index="4" ref = "Area" />
+      <cell index="5" ref = "SZD" />
+      <cell index="6" ref = "SZN" />
+      <cell index="7" ref = "SZX" />
+      <cell index="8" ref = "SZB" />
+      <cell index="9" ref = "BZ" />
+    </row>
+  </table>
+</propertys>

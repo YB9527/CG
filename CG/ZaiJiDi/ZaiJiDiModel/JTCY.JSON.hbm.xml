@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="YanBo_CG"
+                   namespace="YanBo_CG.Zjd.ZjdPo">
+  <class name="JSYD" table="JSYD" lazy="true" >
+
+    <id name="OBJECTID" column="Objectid" type="Int32" >
+      <generator class="native" />
+    </id>
+    <propertys ClassType ="ZaiJiDi.Model.JTCY, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+      <property name="ZH"  column="组别" />
+      <property name="SFGYR"  column="" />
+      <property name="CBFLX"  column="" />
+      <property name="HH"  column="" />
+      <property name="XM"  column="户主" />
+      <property name="CYZJLX"  column="" />
+      <property name="GMSFHM"  column="户主身份证号码" />
+      <property name="LXDH"  column="电话号码" />
+      <property name="Sex"  column="" />
+      <property name="MZ"  column="" />
+      <property name="Birthday"  column="" />
+      <property name="NL"  column="" />
+      <property name="Address"  column="坐落" />
+      <property name="BZ"  column="" />
+      <property name="CBFBM"  column="" />
+      <property name="YHZGX"  column="" />
+      <property name="QLRLX"  column="" />
+      <property name="GZDW"  column="" />
+      <property name="Email"  column="" />
+      <property name="TXDZ"  column="通讯地址" />
+      <property name="YZBM"  column="" />
+      <property name="DCY"  column="测绘员名字" />
+      <property name="DCRQ"  column="调查时间" />
+      <property name="DCJS"  column="" />
+      <property name="SHR"  column="审核员" />
+      <property name="SHRQ"  column="审核时间" />
+      <property name="SHYJ"  column="" />
+    </propertys>
+  </class>
+</hibernate-mapping>

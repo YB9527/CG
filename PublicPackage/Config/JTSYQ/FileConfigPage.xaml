@@ -1,0 +1,83 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="Config.JTSYQ.FileConfigPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Config.JTSYQ"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Uid="文件配置">
+    <UserControl.Resources>
+
+        <Style x:Key="borderStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+        </Style>
+        <Style x:Key="checkBoxStyle" TargetType="{x:Type CheckBox}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+
+        </Style>
+        <Style x:Key="labelStyle" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+            <Setter Property="Margin" Value="5,2,5,2"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="textStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5,2,5,2"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+        <Style x:Key="buttonStyle" TargetType="{x:Type dx:SimpleButton}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="#FFC5EED0"/>
+            <Setter Property="Margin" Value="5,2,5,2"/>
+        </Style>
+        <Style x:Key="comBoxStyle" TargetType="{x:Type ComboBox}">
+        </Style>
+
+    </UserControl.Resources>
+    <Grid >
+        <Border Style="{StaticResource borderStyle}">
+            <Grid Margin="10">
+                <Border Style="{StaticResource borderStyle}">
+                    <StackPanel  >
+                        <StackPanel.Resources>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Orientation" Value="Vertical" />
+                                <Setter Property="Margin" Value="0,0,0,4" />
+                            </Style>
+                        </StackPanel.Resources>
+                        
+                       
+                        
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <dx:SimpleButton Content="行政代码表"  Width="100" Click="XZDMSelectDir_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" ></dx:SimpleButton>
+                            <TextBox MinWidth="370" Text="{Binding XZDMExcelPath, Mode=TwoWay}"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <dx:SimpleButton Content="照片位置" Width="100" Click="PhotoSelectDir_Click" Glyph="{dx:DXImage Image=Open_16x16.png}" ></dx:SimpleButton>
+                            <TextBox MinWidth="370" Text="{Binding PhotoExcelPath, Mode=TwoWay}"></TextBox>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" Height="30" Margin="30,50,0,0">
+                            <dx:SimpleButton Content="保存" Click="Submit_Click" Glyph="{dx:DXImage Image=Apply_16x16.png}"></dx:SimpleButton>
+                            <dx:SimpleButton  Margin="50,0,0,0" Click="Cancel_Click" Content="重置" Glyph="{dx:DXImage Image=Refresh_16x16.png}"></dx:SimpleButton>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

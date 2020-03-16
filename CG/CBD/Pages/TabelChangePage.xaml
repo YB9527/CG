@@ -1,0 +1,29 @@
+﻿<UserControl xmlns:Pages="clr-namespace:FileManager.Pages;assembly=FileManager"  x:Class="CBD.Pages.TabelChangePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CBD.Pages"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="8,8,0,0">
+                    <dx:SimpleButton Content="转换" Click="TableChange_Click" Glyph="{dx:DXImage Image=ClearTableStyle_32x32.png}" />
+                    <!--<dx:SimpleButton Content="宗地属性表转换" Click="ZhongDiShuXingBiaoChange_Click" Margin="30,0,0,0" Glyph="{dx:DXImage Image=ClearTableStyle_32x32.png}"/>-->
+                </StackPanel>
+            </StackPanel>
+           
+        </Grid>
+        <Grid Grid.Row="1">
+            <Pages:AddFilePage x:Name="filePagerPage" />
+        </Grid>
+       
+    </Grid>
+</UserControl>

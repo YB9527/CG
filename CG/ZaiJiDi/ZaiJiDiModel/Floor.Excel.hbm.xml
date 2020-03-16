@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="ZaiJiDi.ZaiJiDiModel.Floor, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  
+  <table index = "0" tableIndex = "1" >
+    <row rowStartIndex ="1" rows = "1" cellTotal = "5">
+      <cell index="0" ref = "ZDNUM" />
+      <cell index="1" ref = "SZC" />
+      <cell index="2" ref = "ZCS" />
+      <cell index="3" ref = "CJZMJ" />
+      <cell index="4" ref = "DH" />
+    </row>
+  </table>
+</propertys>

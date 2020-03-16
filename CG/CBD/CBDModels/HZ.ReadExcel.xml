@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="CBD.CBDModels.JTCY, CBD, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+
+  
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="4" rows = "1" end="0" cellTotal = "28">
+      
+      <cell index="0" ref = "CBFBM" />
+      <cell index="1" ref = "CBFLX" />
+      <cell index="2" ref = "XM" />
+      <cell index="3" ref = "XB" />
+      <cell index="4" ref = "ZJLX" />
+      <cell index="5" ref = "ZJH" />
+      <cell index="6" ref = "LXDH" />
+      <cell index="7" ref = "DZ" />
+      <cell index="8" ref = "YZBM" />
+      <cell index="9" ref = "YHTBH" />
+      <cell index="10" ref = "YDKS" />
+      <cell index="11" ref = "YHTMJ" />
+      <cell index="12" ref = "CBFS" />
+      <cell index="13" ref = "CBQXQ" />
+      <cell index="14" ref = "CBQXZ" />
+      
+      <cell index="19" ref = "YHZGX" />
+      <cell index="20" ref = "SFGYR" />
+      <cell index="21" ref = "BZ" />
+      <cell index="22" ref = "DCY" />
+      <cell index="23" ref = "DCJS" />
+      <cell index="24" ref = "DCSJ" />
+      <cell index="25" ref = "SHR" />
+      <cell index="26" ref = "SHYJ" />
+      <cell index="27" ref = "SHSJ" />
+      
+    </row>
+  </table>
+
+
+</propertys>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+
+                   assembly="HeibernateManager"
+
+                   namespace="HeibernateManager.Model">
+
+  <class name="SoftwareConfig" table="SoftwareConfig" lazy="true" >
+
+    <id name="Key" column="Key"  >
+     
+    </id>
+  
+   
+    <property name="Value"  ></property>
+  
+
+  </class>
+
+
+
+</hibernate-mapping>
+

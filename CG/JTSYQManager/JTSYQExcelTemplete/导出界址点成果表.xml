@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="JTSYQManager.JTSYQModel.JTSYQ, JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <property key= "BM"   />
+  <property key= "Area"   >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f2" parameterClassType = "System.String" />
+  </property>
+  <property key= "ZhiBiao"   />
+  <property key= "ShenHei"   />
+  
+</propertys>

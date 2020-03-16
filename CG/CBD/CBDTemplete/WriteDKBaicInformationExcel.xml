@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="get_" ClassType ="CBD.CBDModels.DK, CBD, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="5" rows = "14" end="0" cellTotal = "13">
+      <cell index="0" ref = "DKBM" />
+      <cell index="1" ref = "DKMC" />
+      <cell index="2" ref = "DKLB" />
+      <cell index="3" ref = "TDLYLX" />
+      <cell index="4" ref = "ZLDMJ" />
+      <cell index="5" ref = "ELCBMJ" />
+      <cell index="6" ref = "SCMJ" />
+      <cell index="7" ref = "SFJBNT" />
+      <cell index="8" ref = "SZDZ" />
+      <cell index="9" ref = "SZNZ" />
+      <cell index="10" ref = "SZXZ" />
+      <cell index="11" ref = "SZBZ" />
+    </row>
+  </table>
+</propertys>

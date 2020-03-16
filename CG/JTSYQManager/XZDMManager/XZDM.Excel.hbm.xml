@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys method="set_" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+  
+  <property key="ZDTHTRQ" value="get_ZDT">
+    <ChildMethoed value = "set_ZDTHTRQ" ClassType ="JTSYQManager.XZDMManager.ZDT,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+
+  <property key="ZDTHTY" value="get_ZDT">
+    <ChildMethoed value = "set_ZDTHTY" ClassType ="JTSYQManager.XZDMManager.ZDT,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  
+  <property key="ZDTSHRQ" value="get_ZDT">
+    <ChildMethoed value = "set_ZDTSHRQ" ClassType ="JTSYQManager.XZDMManager.ZDT,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+
+  <property key="ZDTSHY" value="get_ZDT">
+    <ChildMethoed value = "set_ZDTSHY" ClassType ="JTSYQManager.XZDMManager.ZDT,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  
+  <table tableIndex = "0" index = "0">
+    <row rowStartIndex ="1"  cellTotal = "2">
+      <cell index="0" ref = "DJZQDM" />
+      <cell index="1" ref = "DJZDQMC" />
+      <cell index="2" ref = "ZuZhang" />
+      <cell index="3" ref = "ZhiWu" />
+      <cell index="4" ref = "ZuZhangSFZ" />
+      <cell index="5" ref = "ZuZhangLXDH" />      
+      <cell index="6" ref = "JTSYQ_BH" />
+      <cell index="7" ref = "JTSYQ_GSStartTime" />
+      <cell index="8" ref = "JTSYQ_DasTatal" />
+      <cell index="9" ref = "JTSYQ_DCY" />
+      <cell index="10" ref = "JTSYQ_DCRQ" />
+      <cell index="11" ref = "JTSYQ_SHR" />
+      <cell index="12" ref = "JTSYQ_SHRQ" />
+      <cell index="13" ref = "JTSYQ_ZFLXDH" />
+      <cell index="14" ref = "ZDTHTY" />
+      <cell index="15" ref = "ZDTHTRQ" />
+      <cell index="16" ref = "ZDTSHY" />
+      <cell index="17" ref = "ZDTSHRQ" />
+      
+    </row>
+  </table>
+</propertys>

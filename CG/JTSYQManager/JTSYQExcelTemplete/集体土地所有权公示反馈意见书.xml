@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <property key= "Cun"   />
+  <property key= "JTSYQ_BH"   />
+  <property key= "JTSYQ_GSStartTime"   >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日" parameterClassType = "System.String" />
+  </property>
+  <property key= "JTSYQ_GSEndTime"   >
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日" parameterClassType = "System.String" />
+  </property>
+  <property key= "XiangZheng1"   value="get_XiangZheng">
+  </property>
+  <property key= "XiangZheng"   >
+  <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "镇," parameterClassType = "System.String,System.String" />
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "乡," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key= "JTSYQ_GSStartTimeBefore" value = "get_JTSYQ_GSStartTime"  	>
+    <ChildMethoed ClassType ="System.DateTime" value = "AddDays" parameters = "-1" parameterClassType = "System.Double" />
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日" parameterClassType = "System.String" />
+  </property>
+  <property key= "JTSYQ_GSEndTimeAfter" value = "get_JTSYQ_GSEndTime"  	>
+    <ChildMethoed ClassType ="System.DateTime" value = "AddDays" parameters = "1" parameterClassType = "System.Double" />
+    <ChildMethoed ClassType ="System.DateTime" value = "ToString" parameters = "yyyy年MM月dd日" parameterClassType = "System.String" />
+  </property>
+  <property key= "DJZDQMC"   />
+  <property key= "JTSYQ_ZFLXDH"   />
+</propertys>

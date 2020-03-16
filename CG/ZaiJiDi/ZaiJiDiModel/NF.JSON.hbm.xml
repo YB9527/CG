@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="YanBo_CG"
+                   keyspace="YanBo_CG.Zjd.ZjdPo">
+  <class key="NF" table="NF" lazy="true" >
+
+    <id key="OBJECTID" column="Objectid" type="Int32" >
+      <generator class="native" />
+    </id>
+    <propertys ClassType ="ZaiJiDi.Model.NF, ZaiJiDi, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+      <property key="ZRZH"  column=""  default="1"/>
+      <property key="HH"  column=""  default="1"  />
+      <property key="ZDNUM"  column="宗地号" />
+      <property key="SJH"  column="" />
+      <property key="CJH"  column="" />
+      <property key="HJH"  column="" />
+      <property key="SYQZH"  column="原房屋所有权证号" />
+      <property key="YFCDAH"  column="" />
+      <property key="QLRMC"  column="户主" />
+      <property key="ZJHM"  column="户主身份证号码" />
+      <property key="YQLR"  column="" />
+      <property key="ZCS"  column="总层数" />
+      <property key="SZC"  column="" />
+      <property key="CZTJG"  column="" />
+      <property key="CJZMJ"  column="" />
+      <property key="CZYJZMJ"  column="" />
+      <property key="CFTMJ"  column="" />
+      <property key="CFWYT"  column=""   default="住宅"/>
+      <property key="HX"  column="" />
+      <property key="HXJG"  column="" />
+      <property key="TDYT"  column="" default="住宅用地" />
+      <property key="TDDJ"  column="" />
+      <property key="FWLX"  column="" />
+      <property key="FWXZ"  column="" default="自建房" />
+      <property key="JG"  column=""   />
+      <property key="JZMJ"  column="建筑总面积" />
+      <property key="CS"  column="总层数" />
+      <property key="FZMJ"  column="确权面积" />
+      <property key="SCMJ"  column="" />
+      <property key="FWYT"  column="" default="住宅" />
+      <property key="GHYT"  column="" default="住宅" />
+      <property key="DJZL"  column="" />
+      <property key="CB"  column="" default="私有（自有房产）" />
+      <property key="SQDJSY"  column=""  />
+      <property key="FWLY"  column="房屋修建情况" />
+      <property key="YJTTDSYZ"  column="原房屋所有权证权属来源" />
+      <property key="YFWSYQZ"  column="原集体土地使用证权属来源" />
+      <property key="YDSPCL"  column="" />
+      <property key="SCMJTN"  column="" />
+      <property key="SCQTJZMJ"  column="" />
+      <property key="SCFTMJ"  column="" />
+      <property key="JGRQ"  column="建房年代" />
+      <property key="ZL"  column="坐落" />
+      <property key="CQLY"  column="产权来源" />
+      <property key="QTGSD"  column="" />
+      <property key="QTGSN"  column="" />
+      <property key="QTGSX"  column="" />
+      <property key="QTGSB"  column="" />
+      <property key="DCY"  column="测绘员名字" />
+      <property key="DCRQ"  column="调查时间" />
+      <property key="DCJS"  column=""  default="实地调查"/>
+      <property key="SHY"  column="审核员" />
+      <property key="SHRQ"  column="审核时间" />
+      <property key="SHYJ"  column="" default="调查属实"/>
+      <property key="BZ"  column="" />
+    </propertys>
+  </class>
+</hibernate-mapping>

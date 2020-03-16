@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<propertys ClassType ="JTSYQManager.JTSYQModel.JTSYQ, JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null">
+
+  <property key="ZuZhang" value="get_XZDM">
+    <ChildMethoed value = "get_ZuZhang" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <property key="DJZDQMC" value="get_XZDM">
+    <ChildMethoed value = "get_DJZDQMC" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <property key="DJZDQMC1" value="get_XZDM">
+    <ChildMethoed value = "get_DJZDQMC" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "成都高新区," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key="Zu1" value="get_XZDM">
+    <ChildMethoed value = "get_Zu" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+    <ChildMethoed value = "Replace" ClassType ="System.String"    parameters = "组," parameterClassType = "System.String,System.String" />
+  </property>
+  <property key="ZuZhangSFZ"  value="get_XZDM">
+    <ChildMethoed value = "get_ZuZhangSFZ" ClassType ="JTSYQManager.XZDMManager.XZDM,JTSYQManager, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null"     />
+  </property>
+  <property key= "Area"   >
+    <ChildMethoed ClassType ="System.Double" value = "ToString" parameters = "f4" parameterClassType = "System.String" />
+  </property>
+  <table tableIndex = "0" index = "1">
+    <row rowStartIndex ="4" rows = "1" cellTotal = "38">
+      <cell index="1" ref = "BM" />
+      <cell index="2" ref = "Zu1" />
+      <cell index="3" ref = "DJZDQMC1" />
+      <cell index="5" ref = "ZuZhangSFZ" />
+      <cell index="7" ref = "DJZDQMC" />
+      <cell index="8" ref = "TuFu" />
+      <cell index="9" ref = "ZuZhang" />
+      <cell index="11" ref = "Area" />
+      <cell index="12" ref = "NYDMJ" />
+      <cell index="13" ref = "GDMJ" />
+      <cell index="14" ref = "LDMJ" />
+      <cell index="15" ref = "CDMJ" />
+      <cell index="16" ref = "YDMJ" />
+      <cell index="17" ref = "QTNYDMJ" />
+      <cell index="18" ref = "JSYDMJ" />
+      <cell index="19" ref = "WLYDMJ" />
+      <cell index="20" ref = "SZD" />
+      <cell index="21" ref = "SZN" />
+      <cell index="22" ref = "SZX" />
+      <cell index="23" ref = "SZB" />
+    </row>
+  </table>
+</propertys>

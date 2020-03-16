@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="JTSYQ"
+                   namespace="SanTaiZaiJiDi.Model">
+  <class name="JTSYQ"  lazy="true" >
+    <property name="OBJECTID" ></property>
+    <property name="CZ" ></property>
+    <property name="QLR" ></property>
+    <property name="BM" ></property>
+    <property name="BZ" ></property>
+    <property name="TuFu" ></property>
+    <property name="Shape_Area" ></property>
+    <property name="SZB" ></property>
+    <property name="SZD" ></property>
+    <property name="SZN" ></property>
+    <property name="SZX" ></property>
+    <property name="ZhiBiao" ></property>
+    <property name="ShenHei" ></property>
+  </class>
+  
+
+
+</hibernate-mapping>
+
