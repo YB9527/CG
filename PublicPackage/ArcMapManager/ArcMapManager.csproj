@@ -204,6 +204,9 @@
     <Compile Include="Pages\Views\PagerPage.xaml.cs">
       <DependentUpon>PagerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\SpliceSHPToMxdWindow.xaml.cs">
+      <DependentUpon>SpliceSHPToMxdWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\TifToImagePage.xaml.cs">
       <DependentUpon>TifToImagePage.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
     <Page Include="Pages\Views\PagerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Views\SpliceSHPToMxdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Views\TifToImagePage.xaml">
       <SubType>Designer</SubType>

@@ -557,6 +557,37 @@ namespace CG
             TabelChangePage page = new TabelChangePage();
             AddDocument(page);
         }
+
+        /// <summary>
+        /// 将shp导出 成单个的 mxd
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SpliceSHPToMxd_Click(object sender, ItemClickEventArgs e)
+        {
+            //打开map
+
+            //得到选中的地块  
+        
+            IList<IFeature> features = ArcGisUtils.GetInstance().GetSelectFeature();
+            //得到模板mxd
+
+            //导出mxd
+
+
+        }
+
+        private void ArcgisTool_OpenMxd_Click(object sender, ItemClickEventArgs e)
+        {
+            //string mxdPath = FileUtils.SelectSingleFile("选择mxd文件", MapForm.MXDFilter);
+            string mxdPath = @"D:\桌面\所有权测试数据及样本\高新测试.mxd";
+            if (!MyUtils.Utils.IsStrNull(mxdPath))
+            {
+                MapForm.GetInstance().LoadMXD(mxdPath);                  
+                AddDocument(MapFormCustom.GetInstance());
+                
+            }
+        }
     }
 
 }
